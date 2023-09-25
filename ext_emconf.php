@@ -2,8 +2,8 @@
 
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'NWTU',
-    'description' => 'Theme for nwtu.de',
+    'title' => 'TFT',
+    'description' => 'Theme for tft-filtertechnik.de',
     'author' => 'Weban UG',
     'author_email' => 'developer@weban.de',
     'category' => 'misc',
