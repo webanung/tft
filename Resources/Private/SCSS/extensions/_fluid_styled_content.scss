@@ -1,0 +1,248 @@
+
+.center-block {
+  @extend .mx-auto;
+}
+
+.fa-file-pdf:before {
+  content: "\f1c1";
+}
+.fa-file-mp3:before {
+  content: "\f1c7";
+}
+.fa-file-png:before, .fa-file-jpg:before, .fa-file-jpeg:before, .fa-file-gif:before, .fa-file-tiff:before {
+  content: "\f1c5";
+}
+.fa-file-mp4:before {
+  content: "\f1c8";
+}
+.ce-uploads-fileicon {
+  margin-right: 0.5em;
+}
+
+
+@each $h, $value in $ce-margins-top-bottom {
+  .frame-space-before-#{$h} {
+    margin-top: $value;
+  }
+  .frame-space-after-#{$h} {
+    margin-bottom: $value;
+  }
+}
+
+@each $h, $value in $ce-paddings-top-bottom {
+  .frame-padding-top-#{$h} {
+    padding-top: $value;
+  }
+  .frame-padding-bottom-#{$h} {
+    padding-bottom: $value;
+  }
+}
+
+.frame-default {
+  overflow: hidden;
+}
+
+
+/* frame classes */
+
+.g-max-770 {
+  max-width: 770px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.g-min-height-100vh {
+  min-height: 100vh;
+}
+
+.g-min-height-100p {
+  min-height: 100%;
+}
+
+.g-flex-centered {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+/* IE 11 Fix */
+.g-flex-centered:before {
+  content:'';
+  min-height:inherit;
+  font-size:0;
+}
+
+.g-fixed-bg {
+  background-attachment: fixed;
+  .ce-content > .row > div {
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
+.frame-no-side-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.frame {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.g-bg-black-opacity-0_5--after {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+  color: #fff;
+}
+
+.b-bg-overlay {
+  position: relative;
+  & > div {
+    z-index: 3;
+    position: relative;
+  }
+}
+
+/* ruler  */
+.ruler-before {
+  border-top: 1px solid $border-color;
+}
+.ruler-after {
+  border-bottom: 1px solid $border-color;
+}
+
+
+.g-inner-container {
+
+  @include media-breakpoint-down(sm) {
+    .ce-bodytext {
+      @include make-container();
+
+    }
+  }
+
+  @include media-breakpoint-between(sm,md) {
+    .col-sm-12 {
+      .ce-bodytext {
+        max-width: map-get($container-max-widths,sm);
+      }
+    }
+  }
+
+  @include media-breakpoint-between(md,lg) {
+    .col-md-6 {
+      .ce-bodytext {
+        max-width: 330px;
+        margin-left: auto;
+      }
+    }
+  }
+  @include media-breakpoint-between(lg,xl) {
+    .col-lg-6 {
+      .ce-bodytext {
+        max-width: 450px;
+        margin-left: auto;
+      }
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    .col-xl-6 {
+      .ce-bodytext {
+        max-width: 540px;
+        margin-left: auto;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .order-md-1 .ce-bodytext {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+}
+
+.bg-min-height .bg-column {
+  min-height: 300px;
+}
+
+.bg-column {
+  background-size: cover;
+  position: relative;
+}
+
+
+/* Responsive Background Options on BG-Image Grid-Layouts */
+@include media-breakpoint-down(sm){
+  .layout-50mb-50t, .layout-50t-50mb{
+
+    &.overlay-dark{
+      position: relative;
+
+      > div:not(.col-type-media){
+        padding: 1rem 2rem;
+      }
+      .col-type-media {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        &:after{
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.75);
+        }
+      }
+    }
+    &.overlay-bright{
+      position: relative;
+
+      > div:not(.col-type-media){
+        padding: 1rem 2rem;
+      }
+      .col-type-media {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        &:after{
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255,255,255,0.9);
+        }
+
+      }
+    }
+    &.no-responsive-bg{
+      .col-type-media {
+        display: none;
+      }
+    }
+  }
+}

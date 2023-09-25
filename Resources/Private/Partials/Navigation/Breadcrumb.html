@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     data-namespace-typo3-fluid="true">
+
+    <f:section name="Container">
+
+        <div class="breadcrumb-section d-print-none">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <f:render section="Default" arguments="{_all}"/>
+                </nav>
+            </div>
+        </div>
+
+    </f:section>
+
+    <f:section name="Default">
+
+        <v:page.breadCrumb showHiddenInMenu="true" entryLevel="2" classActive="" classCurrent="active" useShortcutUid="false" showCurrent="1" divider="" as="rootline">
+            <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+
+                <v:page.breadCrumb classFirst="first" entryLevel="1" endLevel="1" classActive="" classCurrent="active" useShortcutUid="false" showCurrent="1" divider="" as="rootlineHome">
+                    <f:for each="{rootlineHome}" as="item2">
+                        <li class="breadcrumb-item {item2.class}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+
+                            <a class="{item2.class}" href="{f:uri.page(pageUid:item2.uid)}" itemprop="item" itemtype="https://schema.org/Article"><i class="t3b-icon-home"></i><span itemprop="name" class="visually-hidden">{item2.linktext}</span></a>
+                            <meta itemprop="position" content="1"/>
+
+                        </li>
+                    </f:for>
+                </v:page.breadCrumb>
+
+                <f:for each="{rootline}" as="item" iteration="iteration">
+                    <li class="breadcrumb-item {item.class}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <a class="{item.class}" href="{f:uri.page(pageUid:item.uid)}" itemprop="item" itemtype="https://schema.org/Article"><span itemprop="name">{item.linktext}</span></a>
+                        <meta itemprop="position" content="{iteration.cycle -> v:math.sum(b:1)}"/>
+                    </li>
+
+                </f:for>
+            </ol>
+        </v:page.breadCrumb>
+
+    </f:section>
+
+</html>

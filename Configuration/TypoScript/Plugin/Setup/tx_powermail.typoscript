@@ -1,0 +1,25 @@
+plugin.tx_powermail {
+  settings.setup {
+    styles {
+      numberOfColumns = 12
+
+      framework {
+        rowClasses =
+        formClasses = form-horizontal
+        fieldAndLabelWrappingClasses = row form-group mb-3
+        fieldWrappingClasses = col-sm-9
+        labelClasses = control-label col-sm-3
+        fieldClasses = form-control
+        offsetClasses = offset-sm-3
+        radioClasses = form-check
+        checkClasses = form-check
+        submitClasses = btn btn-primary
+        createClasses =
+      }
+    }
+  }
+
+}
+
+# disable javascript
+page.includeJSFooter.powermailForm >

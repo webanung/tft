@@ -1,0 +1,17 @@
+ws_t3bootstrap.iconCollections.fa-brands {
+  name = FontAwesome Brands
+  prefix = fab fa-
+  dir = EXT:tft/Resources/Public/Icons/FontAwesome/brands/
+}
+
+ws_t3bootstrap.iconCollections.fa-regular {
+  name = FontAwesome Regular
+  prefix = far fa-
+  dir = EXT:tft/Resources/Public/Icons/FontAwesome/regular/
+}
+
+ws_t3bootstrap.iconCollections.fa-solid {
+  name = FontAwesome Solid
+  prefix = fas fa-
+  dir = EXT:tft/Resources/Public/Icons/FontAwesome/solid/
+}

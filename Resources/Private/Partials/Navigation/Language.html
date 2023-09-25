@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+
+    <f:if condition="{settings.menu.language.activated}">
+
+        <f:render section="{f:if(condition:settings.menu.language.layout,then:settings.menu.language.layout,else:'Dropdown')}" arguments="{class:'ml-1',settings:settings,siteConfig:siteConfig,languagemenu:languagemenu}"/>
+
+    </f:if>
+
+</f:section>
+
+<f:section name="Mobile">
+
+    <f:if condition="{settings.menu.language.activated}">
+
+        <f:render section="Row" arguments="{class:'mb-1 mt-1',settings:settings,siteConfig:siteConfig,languagemenu:languagemenu}"/>
+
+    </f:if>
+
+</f:section>
+
+<f:section name="Dropdown">
+
+    <ul class="nav navbar-language {class}">
+        <li class="dropdown nav-item">
+            <a class="nav-link dropdown-toggle" id="dropdownLanguageMenu" href="#" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i aria-hidden="true" class="fa fa-globe"></i> Languages</a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownLanguageMenu">
+                <f:for each="{languagemenu}" as="language">
+                    <f:if condition="{language.available}">
+
+                        <f:if condition="!{settings.menu.language.hideCurrent} || {language.languageId} != {siteConfig.sys_language_uid}">
+                            <li>
+                                <a aria-label="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xlf:aria.openPageInLanguage', arguments: {0: language.navigationTitle})}" class="dropdown-item" rel="alternate" hreflang="{language.hreflang}" href="{language.link}">
+                                    <f:if condition="{settings.menu.language.itemLayout} == 'FlagAndLabel' || {settings.menu.language.itemLayout} == 'Flag'">
+                                        <img height="16" width="16" aria-hidden="true" alt="{language.navigationTitle}" src="{f:uri.image(src: 'EXT:tft/Resources/Public/Icons/Flags/{language.flag}.gif')}" />
+                                    </f:if>
+                                    <f:if condition="{settings.menu.language.itemLayout} == 'FlagAndLabel' || {settings.menu.language.itemLayout} == 'Label'">
+                                        {language.navigationTitle}
+                                    </f:if>
+                                </a>
+                            </li>
+                        </f:if>
+
+                    </f:if>
+
+                </f:for>
+            </ul>
+        </li>
+
+    </ul>
+
+</f:section>
+
+<f:section name="Row">
+
+    <ul class="nav nav-language {class}">
+        <f:for each="{languagemenu}" as="language">
+            <f:if condition="{language.available}">
+
+                <f:if condition="!{settings.menu.language.hideCurrent} || {language.languageId} != {siteConfig.sys_language_uid}">
+                    <li class="nav-item">
+                        <a aria-label="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xlf:aria.openPageInLanguage', arguments: {0: language.navigationTitle})}" class="nav-link" rel="alternate" hreflang="{language.hreflang}" href="{language.link}">
+                            <f:if condition="{settings.menu.language.itemLayout} == 'FlagAndLabel' || {settings.menu.language.itemLayout} == 'Flag'">
+                                <img height="16" width="16" aria-hidden="true" alt="{language.navigationTitle}" src="{f:uri.image(src: 'EXT:tft/Resources/Public/Icons/Flags/{language.flag}.gif')}" />
+                            </f:if>
+                            <f:if condition="{settings.menu.language.itemLayout} == 'FlagAndLabel' || {settings.menu.language.itemLayout} == 'Label'">
+                                {language.navigationTitle}
+                            </f:if>
+                        </a>
+                    </li>
+                </f:if>
+
+            </f:if>
+
+        </f:for>
+    </ul>
+
+</f:section>
+
+</html>

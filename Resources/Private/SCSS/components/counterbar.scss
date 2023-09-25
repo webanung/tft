@@ -1,0 +1,39 @@
+@import "../variables";
+
+.counter-wrapper {
+  > div {
+    text-align: center;
+  }
+
+  .counter-icon-wrapper {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: #fff;
+
+    p {
+      margin: 0;
+    }
+
+    i {
+      font-size: 2.25rem;
+    }
+  }
+
+  .counter-number {
+    font-weight: bold;
+    font-size: 6.25rem;
+  }
+
+  .counter-text {
+    font-weight: bold;
+    font-size: $h2-font-size;
+  }
+
+  .icon {
+    fill: var(--bs-body-color);
+    height: 100%;
+    display: flex;
+  }
+
+}

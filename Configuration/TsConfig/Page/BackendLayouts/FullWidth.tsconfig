@@ -1,0 +1,31 @@
+
+mod.web_layout.BackendLayouts {
+	FullWidth {
+		title = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:be_layout.full_width
+		icon = EXT:tft/Resources/Public/Icons/fullwidth.svg
+		config {
+			backend_layout {
+				colCount = 1
+				rowCount = 2
+				rows {
+					1 {
+						columns {
+							1 {
+								name = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:be_layout.hero
+								colPos = 5
+							}
+						}
+					}
+					2 {
+						columns {
+							1 {
+								name = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:be_layout.main_content
+								colPos = 0
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

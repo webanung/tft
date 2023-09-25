@@ -1,0 +1,124 @@
+@import "../bootstrap/navbar";
+
+.navbar-brand > a {
+  outline: none;
+
+  &:hover, &:focus {
+    outline: none;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .navbar-brand img {
+    max-width: 11rem;
+    width: 100%;
+  }
+
+  .bd-navbar {
+    .nav-link, .nav-item {
+      float: none;
+    }
+
+    .navbar-nav .nav-item + .nav-item {
+      margin-left: 0;
+    }
+
+  }
+}
+
+@include media-breakpoint-up(sm) {
+
+  .navbar-brand img {
+    max-width: 100%;
+    height: 2.6rem;
+    width: auto;
+  }
+
+}
+
+@include media-breakpoint-up(sm) {
+  .navbar-expand-sm {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+
+.nav-sidebar a.nav-link {
+  padding: .25rem .75rem;
+}
+
+.navbar-light {
+
+  .searchbar-toggler {
+    border-color: rgba(0, 0, 0, .1);
+  }
+
+  .searchbar-toggler-icon {
+    background-image: $searchbar-light-toggler-bg;
+  }
+
+}
+
+.navbar-toggler {
+  color: #000;
+}
+
+
+.navbar-user {
+  .nav-inline {
+    margin-bottom: 0;
+
+    a {
+      color: #666;
+    }
+  }
+
+}
+
+
+
+.navbar-language {
+  margin-left: 0.3rem;
+
+  i {
+    color: #666;
+  }
+}
+
+
+.navbar-nav > li > .sub {
+  // Generate the caret automatically
+  &::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: .25rem;
+    margin-left: .25rem;
+    vertical-align: middle;
+    content: "";
+    border-top: $caret-width solid;
+    border-right: $caret-width solid transparent;
+    border-left: $caret-width solid transparent;
+  }
+
+  // Prevent the focus on the dropdown toggle when closing dropdowns
+  &:focus {
+    outline: 0;
+  }
+}
+
+.navbar-onepage {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .navbar-collapse {
+    order: 2;
+  }
+
+  .nav-language > li:first-child > a {
+    padding-left: 0;
+  }
+}
+

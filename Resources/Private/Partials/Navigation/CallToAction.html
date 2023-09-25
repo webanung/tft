@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     data-namespace-typo3-fluid="true">
+
+    <f:section name="Bar">
+
+        <f:if condition="{settings.callToAction.activated}">
+
+            <div class="d-flex nav-calltoaction is-fixed">
+
+                <f:if condition="{settings.callToAction.email.pageId}">
+
+                    <div data-url="{f:uri.page(pageUid:settings.callToAction.email.pageId,pageType:989862)}" class="calltoaction-item order-{settings.callToAction.email.order} {settings.callToAction.email.btnClass}{f:if(condition:settings.callToAction.email.modal,then:' modal-ajax')}">
+                        <f:link.page pageUid="{settings.callToAction.email.pageId}" title="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xlf:email.title')}" class="calltoaction-item-link no-icon">
+                            <i class="{settings.callToAction.email.iconClass}"></i>
+                            <span class="calltoaction-item-label">{settings.callToAction.email.label}</span>
+                        </f:link.page>
+                    </div>
+                </f:if>
+
+                <f:for each="{settings.callToAction.custom}" as="item">
+                    <f:if condition="{item.pageId}">
+                        <div class="calltoaction-item o-{item.order} {item.btnClass}">
+                            <f:link.page pageUid="{item.pageId}" title="{item.title}" class="calltoaction-item-link no-icon">
+                                <i class="{item.iconClass}"></i>
+                                <span class="calltoaction-item-label">{item.label}</span>
+                            </f:link.page>
+                        </div>
+                    </f:if>
+                </f:for>
+
+                <f:for each="{settings.callToAction.items}" as="item">
+
+                    <f:if condition="{item.link}">
+                        <div class="calltoaction-item o-{item.order} {item.btnClass}">
+                            <f:link.typolink parameter="{item.link}" title="{item.title}" class="calltoaction-item-link no-icon">
+                                <i class="{item.iconClass}"></i>
+                                <span class="calltoaction-item-label">{item.label}</span>
+                            </f:link.typolink>
+                        </div>
+                    </f:if>
+                </f:for>
+
+            </div>
+
+        </f:if>
+
+
+    </f:section>
+
+</html>

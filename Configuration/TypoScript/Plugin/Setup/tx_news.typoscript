@@ -1,0 +1,12 @@
+plugin.tx_news.settings.cssFile >
+plugin.tx_news.settings.list {
+  paginate.itemsPerPage = 4
+  media.dummyImage = EXT:tft/Resources/Public/Images/dummyimage.png
+}
+
+module.tx_news {
+  preselect.sortingField = crdate
+}
+
+
+plugin.tx_news.settings.detail.showSocialShareButtons = 0

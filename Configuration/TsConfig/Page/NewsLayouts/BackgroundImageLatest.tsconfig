@@ -1,0 +1,16 @@
+
+tx_news.templateLayouts {
+    BackgroundImageLatest = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:news.templateLayouts.backgroundImageLatest
+}
+
+TCEFORM.tx_news_domain_model_news.fal_media.config.overrideChildTca.columns.crop.config.cropVariants {
+    upright {
+        title = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:cropVariant.vertical
+        allowedAspectRatios {
+            1:2 {
+                title = 1:2
+                value = 0.5
+            }
+        }
+    }
+}

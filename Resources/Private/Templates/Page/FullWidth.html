@@ -1,0 +1,30 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:ws="http://typo3.org/ns/WapplerSystems/WsT3bootstrap/ViewHelpers">
+
+    <f:layout name="Page"/>
+
+    <f:section name="Resources">
+
+    </f:section>
+
+    <f:section name="HeaderContent">
+        <f:render partial="Hero" section="Hero" arguments="{_all}"/>
+    </f:section>
+
+    <f:section name="Content">
+
+        <ws:variable.register.set name="containerless" value="true" >
+
+            <!--TYPO3SEARCH_begin-->
+            <f:for each="{v:content.get(column: '0')}" as="element">
+                <v:content.render contentUids="{0: element.uid}"  />
+            </f:for>
+            <!--TYPO3SEARCH_end-->
+
+        </ws:variable.register.set>
+
+    </f:section>
+
+</div>

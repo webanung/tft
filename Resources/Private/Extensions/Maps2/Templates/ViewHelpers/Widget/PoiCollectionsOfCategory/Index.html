@@ -1,0 +1,9 @@
+{namespace ws=WapplerSystems\WsT3bootstrap\ViewHelpers}
+
+
+<ws:asset.addJsFooterInlineCode name="maps2" >
+	<f:render partial="JavaScript" arguments="{poiCollections: poiCollections, extConf: extConf}" />
+</ws:asset.addJsFooterInlineCode>
+
+
+<div id="maps2" style="width: {settings.mapWidth}px; height: {settings.mapHeight}px"></div>

@@ -1,0 +1,17 @@
+# Sitemaps of selected pages:
+# ...
+#
+# CType: menu_sitemap_pages
+
+tt_content.menu_sitemap_pages {
+  dataProcessing {
+    10 = WapplerSystems\WsT3bootstrap\Frontend\Menu\DataProcessing\FlexibleMenuProcessor
+    10 {
+      dataProcessing {
+        10 {
+          references.fieldName = previewimage
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+plugin.tx_tft {
+
+  view {
+    templateRootPaths.0 = {$plugin.tx_tft.view.templateRootPath}
+    partialRootPaths.0 = {$plugin.tx_tft.view.partialRootPath}
+    layoutRootPaths.0 = {$plugin.tx_tft.view.layoutRootPath}
+  }
+
+  settings {
+
+    logo = {$logo}
+
+    logoHighContrast = {$logoHighContrast}
+
+    searchPagePID = {$searchPagePID}
+
+    policyPid = {$policyPid}
+
+    menu < lib.menu
+
+    config < config
+
+    header {
+      searchbox = {$searchbox}
+
+      breadcrumb = {$breadcrumb}
+
+      topNavigationWrapperClass = {$topNavigationWrapperClass}
+
+      overlayMenuSection = {$overlayMenuSection}
+    }
+
+    footer {
+      contentUid = {$contentFooterUid}
+    }
+
+    callToAction < lib.callToAction
+
+    hero {
+
+      xl {
+        width = {$plugin.tx_wst3bootstrap.settings.imageFullWidth}
+        mediaquery = (min-width: {$plugin.tx_wst3bootstrap.settings.breakpoints.xl}px)
+        cropVariant = full
+      }
+
+      lg {
+        width = {$plugin.tx_wst3bootstrap.settings.breakpointsMax.lg}
+        mediaquery = (max-width: {$plugin.tx_wst3bootstrap.settings.breakpointsMax.lg}px)
+        cropVariant = lg
+      }
+
+      md {
+        width = {$plugin.tx_wst3bootstrap.settings.breakpointsMax.md}
+        mediaquery = (max-width: {$plugin.tx_wst3bootstrap.settings.breakpointsMax.md}px)
+        cropVariant = md
+      }
+
+      sm {
+        width = {$plugin.tx_wst3bootstrap.settings.breakpointsMax.sm}
+        mediaquery = (max-width: {$plugin.tx_wst3bootstrap.settings.breakpointsMax.sm}px)
+        cropVariant = sm
+      }
+
+      xs {
+        width = {$plugin.tx_wst3bootstrap.settings.breakpointsMax.xs}
+        mediaquery = (max-width: {$plugin.tx_wst3bootstrap.settings.breakpointsMax.xs}px)
+        cropVariant = xs
+      }
+
+    }
+
+    searchTerm = {search_term_string}
+
+
+    aria {
+      activated = {$aria.activated}
+
+      contrast {
+        activated = {$aria.contrast.activated}
+      }
+
+      easy-language {
+        linkType = {$aria.easy-language.linkType}
+        languageId = {$aria.easy-language.languageId}
+        pageId = {$aria.easy-language.pageId}
+      }
+
+      help {
+        pageId = {$aria.help.pageId}
+      }
+    }
+
+    icons {
+      uploads {
+        prefix = {$icons.uploads.prefix}
+      }
+    }
+
+    layout = {$layout}
+
+  }
+
+}
+
+page.5.settings < plugin.tx_tft.settings

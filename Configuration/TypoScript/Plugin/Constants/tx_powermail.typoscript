@@ -1,0 +1,18 @@
+plugin.tx_powermail {
+
+  view {
+    templateRootPath = EXT:tft/Resources/Private/Extensions/Powermail/Templates/
+
+    partialRootPath = EXT:tft/Resources/Private/Extensions/Powermail/Partials/
+  }
+
+  settings {
+
+    javascript {
+      addJQueryFromGoogle = 0
+      addAdditionalJavaScript = 0
+    }
+
+
+  }
+}

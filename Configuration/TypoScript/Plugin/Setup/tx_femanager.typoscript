@@ -1,0 +1,7 @@
+plugin.tx_femanager {
+  view {
+    partialRootPaths {
+      2 = EXT:tft/Resources/Private/Extensions/femanager/Partials/
+    }
+  }
+}

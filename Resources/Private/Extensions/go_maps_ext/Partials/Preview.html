@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="js-gme-preview" data-cookie="{settings.preview.setCookieToShowMapAlways}">
+
+		<f:if condition="{map.previewImage}">
+			<f:then>
+
+				<div style="width:{map.width};height:{map.height};background-image: url('{f:uri.image(image:map.previewImage)}')" class="">
+
+					<div style="height: 100%;background-color: rgba(0, 0, 0, 0.8);display: flex;align-items: center;color: #fff;flex-direction: column;justify-content: center;" class="">
+						<h3>Google Maps</h3>
+						<p>Die Karte wird via Google Maps eingebettet.</p>
+						<p>Es gelten die <a href="https://policies.google.com/privacy" class="text-white-50" target="_blank">Datenschutzerklärungen</a> von Google.</p>
+						<p><a href="javascript:;" title="{f:translate(key:'tx_gomapsext_templates_map_preview.link')}" class="js-gme-show btn btn-primary" data-library="{googleMapsLibrary}">
+							Google Karte aktivieren</a>
+						</p>
+					</div>
+
+				</div>
+
+			</f:then>
+			<f:else>
+				<f:if condition="{settings.preview.image}">
+					<f:then>
+						<f:image src="{settings.preview.image}"/>
+					</f:then>
+					<f:else>
+						<f:translate key="tx_gomapsext_templates_map_preview.link"/>
+					</f:else>
+				</f:if>
+			</f:else>
+		</f:if>
+
+</div>
+
+</html>

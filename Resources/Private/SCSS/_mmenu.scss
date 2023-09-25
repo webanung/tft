@@ -1,0 +1,25 @@
+$mm_backgroundColor: $body-bg;
+
+//@import "../Vendor/mmenu/src/mmenu";
+
+.mm-listitem_selected {
+  font-weight: bold;
+  background: #efefef;
+}
+
+/* shortcut with prevent link option */
+.mm-listitem a[href="#prevent-link"] {
+  + a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:after {
+    display: none;
+  }
+}
+
+.mm-wrapper--position-left .mm-slideout, .mm-wrapper--position-right .mm-slideout {
+  will-change: unset !important;
+}

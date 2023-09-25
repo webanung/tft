@@ -1,0 +1,132 @@
+
+@import "init";
+@import "../bootstrap/card";
+
+.card > i {
+
+  text-align: center;
+  display: block;
+  font-size: 3rem;
+  color: #555;
+  padding-top: 1rem;
+
+}
+
+.card-header a {
+  display: block;
+}
+
+.accordion {
+  .card-header a {
+
+    &:after {
+      //@extend .fas;
+      position: absolute;
+      content: '\f00d';
+      right: 1rem;
+      transition: all 0.2s ease-in-out;
+      transform: rotate(0deg);
+    }
+
+    &.collapsed:after {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.card-body > p:last-child {
+  margin-bottom: 0;
+}
+
+.card-img, .card-img-top, .card-img-bottom {
+  height: auto;
+}
+
+/*
+.card-deck {
+  .flip-card {
+    margin-bottom: $card-deck-margin;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    .flip-card {
+      // Flexbugs #4: https://github.com/philipwalton/flexbugs#flexbug-4
+      flex: 1 0 0%;
+      margin-right: $card-deck-margin;
+      margin-bottom: 0; // Override the default
+      margin-left: $card-deck-margin;
+    }
+  }
+}
+*/
+
+.flip-card .card {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+
+/* flip cards */
+
+.flip-card {
+
+}
+
+.flip-card-inner {
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+  flex: 1 0 0%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  backface-visibility: hidden;
+  transition: 1s;
+  transform-style: preserve-3d;
+  flex: 1 0 0%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-card-front {
+  z-index: 2;
+}
+
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  transform: rotateY(-180deg);
+  box-shadow: 5px 7px 9px -4px #9e9e9e;
+}
+
+.hover-card {
+
+  figure {
+    overflow: hidden;
+  }
+
+  img {
+    transition: transform .5s ease-in-out !important;
+    -webkit-transform: scale(1);
+  }
+
+  &:hover, &:focus {
+    img {
+      transform: scale(1.2);
+    }
+  }
+
+}

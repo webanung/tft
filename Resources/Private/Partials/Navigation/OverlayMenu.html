@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+      xmlns:wsscss="http://typo3.org/ns/WapplerSystems/WsScss/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:section name="Default">
+        <wsscss:asset.scss identifier="overlaymenu" href="EXT:tft/Resources/Private/SCSS/components/overlay-menu.scss" />
+        <f:asset.script identifier="overlaymenu" src="EXT:tft/Resources/Public/JavaScript/overlaymenu/overlaymenu.js" />
+
+        <div id="overlaymenu" class="overlay-menu">
+            <div class="container">
+                <v:content.render column="0" pageUid="{settings.menu.main.overlayMenuPid}"/>
+            </div>
+        </div>
+    </f:section>
+
+
+</html>

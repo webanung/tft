@@ -1,0 +1,11 @@
+tt_content.menu_abstract {
+  dataProcessing {
+    10 {
+      dataProcessing {
+        10 {
+          references.fieldName = preview_image
+        }
+      }
+    }
+  }
+}

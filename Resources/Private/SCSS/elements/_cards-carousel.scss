@@ -1,0 +1,38 @@
+
+
+.cards-carousel {
+  padding: 0 2rem;
+
+  .item {
+    padding: 0 2px;
+    display: flex;
+    width: 100%;
+  }
+  .card {
+    flex-grow: 1;
+  }
+
+  .owl-nav {
+    position: absolute;
+    top: 37%;
+    left: 0;
+    right: 0;
+    font-size: 4rem;
+    line-height: 4rem;
+
+    .owl-prev {
+      left: -3px;
+      position: absolute;
+    }
+    .owl-next {
+      right: 0;
+      position: absolute;
+    }
+    button {
+      outline: none;
+    }
+  }
+  .owl-stage, .owl-item {
+    display: flex;
+  }
+}

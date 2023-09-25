@@ -1,0 +1,159 @@
+
+# Load default processing options
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  externalPlugins:
+    colorbutton:
+      resource: "EXT:tft/Resources/Public/CKEditor/Plugins/colorbutton/"
+
+  config:
+
+    indentClasses:
+      - 'ps-2'
+      - 'ps-3'
+      - 'ps-4'
+
+    contentsCss: "EXT:tft/Resources/Public/CSS/rte.css"
+
+    # can be "default", but a custom stylesSet can be defined here, which fits TYPO3 best
+    stylesSet:
+
+      # Überschriften
+      - { name: "Stil 1", element: "h4", attributes: { 'class': 'style1' } }
+
+      - { name: "Display 1", element: "h1", attributes: { 'class': 'display-1' } }
+      - { name: "Display 2", element: "h1", attributes: { 'class': 'display-2' } }
+      - { name: "Display 3", element: "h1", attributes: { 'class': 'display-3' } }
+      - { name: "Display 4", element: "h1", attributes: { 'class': 'display-4' } }
+
+
+      # Blockstile
+      - { name: "Einführungstext", element: "p", attributes: { 'class': 'lead' } }
+      - { name: "Kleiner Text", element: "p", attributes: { 'class': 'small' } }
+      - { name: "Text ohne Umbruch", element: "p", attributes: { 'class': 'text-nowrap' } }
+
+      - { name: "Kleingeschriebener Text", element: "p", attributes: { 'class': 'text-lowercase' } }
+      - { name: "Großgeschriebener Text", element: "p", attributes: { 'class': 'text-uppercase' } }
+      - { name: "Großer Anfangsbuchstabe", element: "p", attributes: { 'class': 'text-capitalize' } }
+
+      - { name: "Info", element: "p", attributes: { 'class': 'text-info' } }
+      - { name: "Ausgegraut", element: "p", attributes: { 'class': 'text-muted' } }
+      - { name: "Gefahr", element: "p", attributes: { 'class': 'text-danger' } }
+      - { name: "Erfolg", element: "p", attributes: { 'class': 'text-success' } }
+      - { name: "Warnung", element: "p", attributes: { 'class': 'text-warning' } }
+
+      - { name: "Kein unterer Abstand", element: "p", attributes: { 'class': 'mb-0' } }
+
+      - { name: "Stil 1", element: "p", attributes: { 'class': 'style1' } }
+
+
+      # Tabellen
+      - { name: "Tabelle", element: "table", attributes: { 'class': 'table table-hover' } }
+      - { name: "Tabelle - Gestreifte Zeilen", element: "table", attributes: { 'class': 'table table-hover table-striped' } }
+      - { name: "Tabelle mit Rahmen", element: "table", attributes: { 'class': 'table table-hover table-bordered' } }
+      - { name: "Tabelle (komprimiert)", element: "table", attributes: { 'class': 'table table-hover table-condensed' } }
+
+      # Tabellen-Zeilen
+      - { name: "Row Active", element: "tr", attributes: { 'class': 'active' } }
+      - { name: "Row Success", element: "tr", attributes: { 'class': 'success' } }
+      - { name: "Row Info", element: "tr", attributes: { 'class': 'info' } }
+      - { name: "Row Warning", element: "tr", attributes: { 'class': 'warning' } }
+      - { name: "Row Danger", element: "tr", attributes: { 'class': 'danger' } }
+
+      # Buttons
+      - { name: "Button Default", element: "a", attributes: { 'class': 'btn btn-default' } }
+      - { name: "Button Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
+      - { name: "Button Secondary", element: "a", attributes: { 'class': 'btn btn-secondary' } }
+      - { name: "Button Success", element: "a", attributes: { 'class': 'btn btn-success' } }
+      - { name: "Button Info", element: "a", attributes: { 'class': 'btn btn-info' } }
+      - { name: "Button Warning", element: "a", attributes: { 'class': 'btn btn-warning' } }
+      - { name: "Button Danger", element: "a", attributes: { 'class': 'btn btn-danger' } }
+      - { name: "Button Outline Primary", element: "a", attributes: { 'class': 'btn btn-outline-primary' } }
+      - { name: "Button Outline White", element: "a", attributes: { 'class': 'btn btn-outline-white' } }
+      - { name: "Button", element: "a", attributes: { 'class': 'btn' } }
+
+      # Buttons Large
+      - { name: "Button Default Large", element: "a", attributes: { 'class': 'btn btn-lg btn-default' } }
+      - { name: "Button Primary Large", element: "a", attributes: { 'class': 'btn btn-lg btn-primary' } }
+      - { name: "Button Secondary Large", element: "a", attributes: { 'class': 'btn btn-lg btn-secondary' } }
+      - { name: "Button Success Large", element: "a", attributes: { 'class': 'btn btn-lg btn-success' } }
+      - { name: "Button Info Large", element: "a", attributes: { 'class': 'btn btn-lg btn-info' } }
+      - { name: "Button Warning Large", element: "a", attributes: { 'class': 'btn btn-lg btn-warning' } }
+      - { name: "Button Danger Large", element: "a", attributes: { 'class': 'btn btn-lg btn-danger' } }
+      - { name: "Button Outline Primary Large", element: "a", attributes: { 'class': 'btn btn-lg btn-outline-primary' } }
+      - { name: "Button Outline White Large", element: "a", attributes: { 'class': 'btn btn-lg btn-outline-white' } }
+      - { name: "Button Large", element: "a", attributes: { 'class': 'btn btn-lg' } }
+
+      # Labels
+      - { name: "Label Default", element: "span", attributes: { 'class': 'label label-default' } }
+      - { name: "Label Primär", element: "span", attributes: { 'class': 'label label-primary' } }
+      - { name: "Label Erfolg", element: "span", attributes: { 'class': 'label label-success' } }
+      - { name: "Label Info", element: "span", attributes: { 'class': 'label label-info' } }
+      - { name: "Label Warning", element: "span", attributes: { 'class': 'label label-warning' } }
+      - { name: "Label danger", element: "span", attributes: { 'class': 'label label-danger' } }
+
+      # Textstile
+      - { name: "Kleiner Text inline", element: "span", attributes: { 'class': 'small' } }
+      - { name: "Markierter Text", element: "mark" }
+      - { name: "Gelöschter Text", element: "del" }
+      - { name: "Eingefügter Text", element: "ins" }
+      - { name: "Adresse", element: "address" }
+      - { name: "Zitat rechts ausgerichtet", element: "blockquote" ,attributes: { 'class': 'blockquote-reverse' }}
+
+      # Listen
+      - { name: 'Ohne Gestaltung', element: 'ul', attributes: { 'class': 'list-unstyled' } }
+      - { name: 'Inline', element: 'ul', attributes: { 'class': 'list-inline' } }
+      - { name: 'Keine UL Bullets', element: 'ul', attributes: { 'class': 'no-bullet' } }
+
+    format_tags: "p;h1;h2;h3;h4;h5;h6;pre"
+
+    toolbarGroups:
+      - { name: clipboard, groups: [clipboard, undo] }
+      - { name: editing,   groups: [find, selection, spellchecker] }
+      - { name: links }
+      - { name: insert }
+      - { name: tools }
+      - { name: table }
+      - { name: tabletools }
+      - { name: document,  groups: [ mode, document, doctools ] }
+      - { name: others }
+      - "/"
+      - { name: basicstyles, groups: [ basicstyles, align, cleanup ] }
+      - { name: paragraph,   groups: [ list, indent, blocks, align, bidi ] }
+      - "/"
+      - { name: styles }
+      - { name: colors }
+
+    justifyClasses:
+      - align-left
+      - align-center
+      - align-right
+      - align-justify
+
+    extraPlugins:
+      - justify
+      - find
+      - bidi
+      - indentblock
+      - colorbutton
+
+    colorButton_colors: "000000,FFFFFF"
+    colorButton_historyRowLimit: 0
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - BGColor
+
+# Allow s and u tag
+processing:
+  allowTags:
+    - s
+    - u

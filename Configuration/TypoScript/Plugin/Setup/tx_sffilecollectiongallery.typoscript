@@ -1,0 +1,10 @@
+plugin.tx_sffilecollectiongallery {
+
+  view {
+    partialRootPaths {
+      60 = EXT:tft/Resources/Private/Extensions/fluid_styled_content/Partials/
+    }
+  }
+
+}
+

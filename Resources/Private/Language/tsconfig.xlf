@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-07T11:13:04Z"
+		  product-name="tft">
+		<header/>
+		<body>
+
+			<trans-unit id="bg_color_class.bg-dark-gray">
+				<source>Template: dark gray</source>
+			</trans-unit>
+			<trans-unit id="bg_color_class.bg-gray1">
+				<source>Template: gray1</source>
+			</trans-unit>
+			<trans-unit id="bg_color_class.bg-gray2">
+				<source>Template: gray2</source>
+			</trans-unit>
+			<trans-unit id="bg_color_class.bg-light-gray">
+				<source>Template: light gray</source>
+			</trans-unit>
+
+			<!-- Backend Layouts -->
+			<trans-unit id="be_layout.one_column">
+				<source>One Column</source>
+			</trans-unit>
+			<trans-unit id="be_layout.two_columns">
+				<source>Two Columns</source>
+			</trans-unit>
+			<trans-unit id="be_layout.two_columns_department">
+				<source>Two Columns Department</source>
+			</trans-unit>
+			<trans-unit id="be_layout.three_columns">
+				<source>Three Columns</source>
+			</trans-unit>
+			<trans-unit id="be_layout.full_width">
+				<source>Full width (outdated)</source>
+			</trans-unit>
+			<trans-unit id="be_layout.one_pager">
+				<source>One Pager</source>
+			</trans-unit>
+
+			<trans-unit id="be_layout.main_content">
+				<source>Main Content</source>
+			</trans-unit>
+			<trans-unit id="be_layout.hero">
+				<source>Hero</source>
+			</trans-unit>
+			<trans-unit id="be_layout.menu_column">
+				<source>Menu Column</source>
+			</trans-unit>
+			<trans-unit id="be_layout.sidebar">
+				<source>Side Bar</source>
+			</trans-unit>
+			<trans-unit id="be_layout.side_content">
+				<source>Side Content</source>
+			</trans-unit>
+			<trans-unit id="be_layout.inheriting_side_content">
+				<source>Inheriting Side Content</source>
+			</trans-unit>
+
+			<!-- Icons -->
+			<trans-unit id="icon_size.sm">
+				<source>Small</source>
+			</trans-unit>
+			<trans-unit id="icon_size.md">
+				<source>Medium</source>
+			</trans-unit>
+			<trans-unit id="icon_size.lg">
+				<source>Large</source>
+			</trans-unit>
+			<trans-unit id="icon_size.xl">
+				<source>Extra large</source>
+			</trans-unit>
+
+
+			<trans-unit id="icon_color.primary">
+				<source>Primary color</source>
+			</trans-unit>
+			<trans-unit id="icon_color.secondary">
+				<source>Secondary color</source>
+			</trans-unit>
+
+
+			<trans-unit id="icon_style.bg-circle">
+				<source>Circular background</source>
+			</trans-unit>
+			<trans-unit id="icon_style.border-circle">
+				<source>Bordered with circle</source>
+			</trans-unit>
+			<trans-unit id="icon_style.bg-square">
+				<source>Square background</source>
+			</trans-unit>
+			<trans-unit id="icon_style.border-square">
+				<source>Square bordered</source>
+			</trans-unit>
+			<trans-unit id="icon_style.bg-border-circle">
+				<source>Circular background with border</source>
+			</trans-unit>
+
+
+			<trans-unit id="layout.with_preview">
+				<source>With preview image</source>
+			</trans-unit>
+			<trans-unit id="layout.show_selected_pages">
+				<source>Show selected pages</source>
+			</trans-unit>
+
+
+			<trans-unit id="news.templateLayouts.list">
+				<source>List</source>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.latest">
+				<source>Latest</source>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.backgroundImageLatest">
+				<source>Latest: image background, upright</source>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.rightImageLatest">
+				<source>Latest: Square image right</source>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.slimImageLatest">
+				<source>Latest: Narrow preview image</source>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.timelineCardsAlternately">
+				<source>Timeline: Alternate Cards</source>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.timelineCardsStraight">
+				<source>Timeline: Straight cards</source>
+			</trans-unit>
+
+
+			<trans-unit id="cropVariants.vertical">
+				<source>Vertical</source>
+			</trans-unit>
+			<trans-unit id="cropVariants.standard">
+				<source>Standard</source>
+			</trans-unit>
+			<trans-unit id="cropVariants.square">
+				<source>Square</source>
+			</trans-unit>
+			<trans-unit id="cropVariants.slim">
+				<source>Slim</source>
+			</trans-unit>
+			<trans-unit id="cropVariants.square">
+				<source>Square</source>
+			</trans-unit>
+
+
+			<trans-unit id="frame_class.news-block">
+				<source>News block</source>
+			</trans-unit>
+
+
+			<trans-unit id="header_layout.footer1">
+				<source>Footer 1</source>
+			</trans-unit>
+
+
+		</body>
+	</file>
+</xliff>

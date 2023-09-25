@@ -1,0 +1,43 @@
+<ul class="news-meta">
+
+    <!-- author -->
+    <f:if condition="{newsItem.author}">
+        <li class="news-meta-item">
+            <i class="t3b-icon-user" aria-hidden="true"></i>
+            <f:translate key="author" arguments="{0:newsItem.author}"/>
+        </li>
+    </f:if>
+
+    <li class="news-meta-item">
+        <!-- date --><i class="t3b-icon-calendar-alt" aria-hidden="true"></i>
+        <time datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+            <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+            <meta itemprop="datePublished" content="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}"/>
+        </time>
+    </li>
+
+
+    <!-- category -->
+    <f:if condition="{newsItem.categories}">
+        <li class="news-meta-item">
+            <i class="t3b-icon-list-alt" aria-hidden="true"></i>
+            <span class="news-list-categories">
+			<f:for each="{newsItem.categories}" as="category" iteration="iterator">
+				{category.title}{f:if(condition:iterator.isLast,else:', ')}
+			</f:for>
+			</span>
+        </li>
+    </f:if>
+
+    <f:if condition="{newsItem.tags}">
+        <li class="news-meta-item">
+            <i class="t3b-icon-tag" aria-hidden="true"></i>
+            <span class="news-list-tags" itemprop="keywords">
+				<f:for each="{newsItem.tags}" as="tag" iteration="iterator">
+					{tag.title}{f:if(condition:iterator.isLast,else:', ')}
+				</f:for>
+			</span>
+        </li>
+    </f:if>
+
+</ul>

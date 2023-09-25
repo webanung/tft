@@ -1,0 +1,131 @@
+$primary: #1c1c1c; /*005262*/
+$lightblue: #50a734;
+
+
+// Eigene Farben, automatisch über die Klasse .c-<color>
+$custom-colors: (
+  dark-gray: #005262,
+  gray: #999,
+  graylight: #f7f7f7
+);
+
+$icon-colors: (
+  darkgray: #434343,
+  primary: #005262,
+  secondary: #72c02c
+);
+
+$icon-sizes: (
+  sm: 2rem,
+  md: 3rem,
+  lg: 4rem,
+  xl: 6rem
+);
+
+$font-family-sans-serif: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+$h1-font-size: 2.0rem;
+$h2-font-size: 1.8rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.3rem;
+$h5-font-size: 1.1rem;
+$h6-font-size: 1rem;
+
+$headings-margins-bottom: (
+  h1: 2.5rem,
+  h2: 2rem,
+  h3: 0.5rem,
+  h4: 0.5rem,
+  h5: 0.5rem,
+  h6: 0.5rem
+);
+
+$ce-margins-top-bottom: (
+  extra-small: 0.5rem,
+  small: 2rem,
+  medium: 3rem,
+  large: 4rem,
+  extra-large: 5rem
+);
+
+$ce-paddings-top-bottom: (
+  extra-small: 0.5rem,
+  small: 1rem,
+  medium: 2rem,
+  large: 3rem,
+  extra-large: 5rem
+);
+
+$font-size-base: 0.95rem;
+
+$breadcrumb-padding-vertical: .35rem;
+$breadcrumb-bg: transparent;
+$breadcrumb-divider-color: #949494;
+$breadcrumb-padding-y: .35rem;
+$breadcrumb-color: rgba(#000, .7);
+
+$font-path: '/typo3conf/ext/tft/Resources/Public/Fonts/';
+$t3b-font-path: '/typo3conf/ext/tft/Resources/Public/Fonts/T3Bootstrap/';
+
+$fa-font-path: "#{$font-path}FontAwesome";
+$fa-font-display: swap;
+
+$navbar-light-color: rgba(#000, .7);
+$navbar-brand-margin-end: 3rem;
+
+
+$searchbar-light-toggler-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M15.5 14h-.79l-.28-.27c.98-1.14 1.57-2.62 1.57-4.23 0-3.59-2.91-6.5-6.5-6.5s-6.5 2.91-6.5 6.5 2.91 6.5 6.5 6.5c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99 1.49-1.49-4.99-5zm-6 0c-2.49 0-4.5-2.01-4.5-4.5s2.01-4.5 4.5-4.5 4.5 2.01 4.5 4.5-2.01 4.5-4.5 4.5z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+
+$scroll-to-top-color: rgb(220, 220, 220);
+
+// Labels
+
+$label-default-bg: #818a91;
+$label-primary-bg: #0275d8;
+$label-success-bg: #5cb85c;
+$label-info-bg: #5bc0de;
+$label-warning-bg: #f0ad4e;
+$label-danger-bg: #d9534f;
+
+$label-color: #fff;
+$label-link-hover-color: #fff;
+$label-font-weight: bold;
+
+
+$custom-file-text: (
+  en: "Choose file...",
+  de: "Datei wählen..."
+);
+
+
+$body-color: #444;
+$link-color: $primary;
+$pagination-color: $primary;
+
+$spacer: 1rem;
+
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+  7: $spacer * 5
+);
+
+$navbar-nav-link-padding-x: 1rem;
+
+
+// news meta
+$news-meta-color: #6c757d;
+$news-meta-item-padding: .5rem;
+
+$news-meta-margin-bottom: 1rem;
+
+$news-meta-divider-color: #6c757d;
+$news-meta-active-color: #6c757d;
+$news-meta-divider: quote("|");

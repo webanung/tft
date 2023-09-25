@@ -1,0 +1,21 @@
+@media print {
+
+  .accordion .collapse {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+
+  /* Optimierung fuer IE/Edge */
+  .news-single {
+    .row {
+      display: block !important;
+    }
+
+    .col-12 {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: none !important;
+    }
+  }
+}

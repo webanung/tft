@@ -1,0 +1,62 @@
+
+
+.number-carousel {
+
+  .owl-dots {
+    margin: 2rem 0;
+    counter-reset: dots;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .owl-dot {
+      background-color: #ccc;
+      border: 0;
+      border-radius: 50%;
+      display: block;
+      width: 6rem;
+      line-height: 6rem;
+      font-size: 4rem;
+      color: white;
+      font-weight: 700;
+      margin: 0 1rem;
+      outline: none;
+      &.active {
+        background-color: $primary;
+      }
+    }
+  }
+
+  .owl-dot:before {
+    counter-increment:dots;
+    content: counter(dots);
+  }
+
+  .owl-carousel {
+    padding: 0 3rem;
+  }
+
+  .owl-nav {
+    position: absolute;
+    top: 37%;
+    left: 0;
+    right: 0;
+    font-size: 4rem;
+    line-height: 4rem;
+
+    .owl-prev {
+      left: -3px;
+      position: absolute;
+    }
+    .owl-next {
+      right: 0;
+      position: absolute;
+    }
+    button {
+      outline: none;
+    }
+  }
+
+
+
+}

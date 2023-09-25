@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+
+    <nav class="navbar-user small d-none d-lg-block d-print-none clearfix">
+        <div class="container">
+            <nav class="navbar py-0 justify-content-end">
+                <f:render partial="Navigation/Custom" section="Default" optional="TRUE" arguments="{_all}"/>
+
+                <f:render partial="Navigation/Language" section="Default" optional="TRUE" arguments="{_all}"/>
+            </nav>
+        </div>
+    </nav>
+
+</f:section>
+
+<f:section name="Mobile">
+
+    <nav id="nav-mobile-footer">
+        <div>
+            <f:render partial="Navigation/Language" section="Mobile" optional="TRUE" arguments="{_all}"/>
+
+            <f:render partial="Navigation/Custom" section="Mobile" optional="TRUE" arguments="{_all}"/>
+        </div>
+    </nav>
+
+</f:section>
+
+</html>

@@ -1,0 +1,136 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:ws="http://typo3.org/ns/WapplerSystems/WsT3bootstrap/ViewHelpers"
+     data-namespace-typo3-fluid="true">
+
+    <f:section name="Bootstrap">
+
+        <v:menu entryLevel="{settings.menu.main.entryLevel}" classCurrent="current high-ct-inverted" classActive="active high-ct-inverted" showAccessProtected="{settings.menu.showAccessProtectedPages}" expandAll="false" useShortcutUid="false" classHasSubpages="dropdown-toggle">
+            <f:if condition="{menu}">
+
+                <ul class="nav navbar-nav d-print-none">
+                    <f:for each="{menu}" as="menuPage" iteration="iteration">
+                        <li class="nav-item{f:if(condition: menuPage.hasSubPages, then: ' dropdown')}">
+
+                            <f:if condition="{menuPage.prevent_link}">
+                                <f:then>
+                                    <a {f:if(condition:menuPage.target,then:'target="{menuPage.target}"')} class="nav-link {menuPage.class}" {f:if(condition: menuPage.hasSubPages, then: 'data-bs-toggle="dropdown" data-bs-target="#"')} >
+                                        {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+                                    </a>
+                                </f:then>
+                                <f:else>
+                                    <ws:menu.link class="nav-link {menuPage.class}" href="{menuPage.link}" target="{menuPage.target}" data-bs-toggle="{f:if(condition:menuPage.hasSubPages, then:'dropdown')}" data-bs-target="{f:if(condition:menuPage.hasSubPages, then:'#')}">
+                                        {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+                                    </ws:menu.link>
+                                </f:else>
+                            </f:if>
+
+                            <v:menu pageUid="{menuPage.uid}" classCurrent="current high-ct-inverted" classActive="active high-ct-inverted" showAccessProtected="{settings.menu.showAccessProtectedPages}" includeSpacers="false" expandAll="false">
+                                <f:if condition="{menu}">
+                                    <ul class="dropdown-menu collapse" role="menu">
+
+                                        <f:for each="{menu}" as="subMenuPage" iteration="subIteration">
+                                            <li class="">
+
+                                                <f:if condition="{subMenuPage.prevent_link}">
+                                                    <f:then>
+                                                        <a class="dropdown-item {subMenuPage.class}" {f:if(condition:subMenuPage.target,then:'target="{subMenuPage.target}"')}>
+                                                            {f:if(condition: subMenuPage.nav_title, then: subMenuPage.nav_title, else: subMenuPage.title)}
+                                                        </a>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <ws:menu.link class="dropdown-item {subMenuPage.class}" href="{subMenuPage.link}" target="{subMenuPage.target}">
+                                                            {f:if(condition: subMenuPage.nav_title, then: subMenuPage.nav_title, else: subMenuPage.title)}
+                                                        </ws:menu.link>
+                                                    </f:else>
+                                                </f:if>
+
+
+                                            </li>
+                                        </f:for>
+                                    </ul>
+                                </f:if>
+                            </v:menu>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:if>
+        </v:menu>
+
+    </f:section>
+
+
+    <f:section name="SmartMenus">
+
+        <v:menu entryLevel="{settings.menu.main.entryLevel}" classCurrent="current high-ct-inverted" classActive="active high-ct-inverted" showAccessProtected="{settings.menu.showAccessProtectedPages}" expandAll="false" useShortcutUid="false" classHasSubpages="dropdown-toggle">
+            <f:if condition="{menu}">
+
+                <ul class="nav navbar-nav flex-row smartmenus d-print-none">
+                    <f:for each="{menu}" as="menuPage" iteration="iteration">
+
+                        <li class="nav-item{f:if(condition: menuPage.hasSubPages, then: ' dropdown')} nav-item-{menuPage.uid}">
+
+                            <a {f:if(condition: '!{menuPage.prevent_link}', then: 'href="{menuPage.link}"', else: 'href="#prevent-link"')} class="nav-link {menuPage.class} nav-item-{menuPage.uid}" {f:if(condition:menuPage.target,then:'target="{menuPage.target}"')}>
+                            {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+                            </a>
+
+                            <v:menu showAccessProtected="{settings.menu.showAccessProtectedPages}" classCurrent="current high-ct-inverted" classActive="active high-ct-inverted" pageUid="{menuPage.uid}" includeSpacers="false" expandAll="false" classHasSubpages="dropdown-toggle-submenu">
+                                <f:if condition="{menu}">
+                                    <ul class="dropdown-menu" role="menu">
+
+                                        <f:for each="{menu}" as="subMenuPage" iteration="subIteration">
+
+                                            <f:render section="NavItem" arguments="{menuPage:subMenuPage, settings:settings}" />
+
+                                        </f:for>
+                                    </ul>
+                                </f:if>
+                            </v:menu>
+
+                        </li>
+
+                    </f:for>
+                </ul>
+
+            </f:if>
+        </v:menu>
+
+
+    </f:section>
+
+
+    <f:section name="NavItem">
+
+        <li class="nav-item-{menuPage.uid}{f:if(condition: menuPage.hasSubPages, then: ' dropdown-submenu')}">
+
+            <f:if condition="{menuPage.prevent_link}">
+                <f:then>
+                    <a class="dropdown-item {menuPage.class}" {f:if(condition:menuPage.target,then:'target="{menuPage.target}"')}>
+                    {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+                    </a>
+                </f:then>
+                <f:else>
+                    <ws:menu.link class="dropdown-item {menuPage.class}" href="{menuPage.link}" target="{menuPage.target}">
+                        {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+                    </ws:menu.link>
+                </f:else>
+            </f:if>
+
+            <v:menu pageUid="{menuPage.uid}" classCurrent="current high-ct-inverted" classActive="active high-ct-inverted" includeSpacers="false" expandAll="false" classHasSubpages="dropdown-toggle-submenu">
+                <f:if condition="{menu}">
+                    <ul class="dropdown-menu" role="menu">
+                        <f:for each="{menu}" as="subMenuPage">
+
+                            <f:render section="NavItem" arguments="{menuPage:subMenuPage}"/>
+
+                        </f:for>
+                    </ul>
+                </f:if>
+            </v:menu>
+
+        </li>
+
+    </f:section>
+
+</html>

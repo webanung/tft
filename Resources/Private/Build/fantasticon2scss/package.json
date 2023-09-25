@@ -1,0 +1,25 @@
+{
+	"name": "fantasticon2scss",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"commander": "^9.4.1",
+		"fantasticon": "^1.0.0",
+		"css": "^3.0.0",
+		"clonedeep": "^2.0.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/WapplerSystems/nodejs-fantasticon2scss.git"
+	},
+	"author": "Sven Wappler",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/WapplerSystems/nodejs-fantasticon2scss/issues"
+	},
+	"homepage": "https://github.com/WapplerSystems/nodejs-fantasticon2scss#readme"
+}

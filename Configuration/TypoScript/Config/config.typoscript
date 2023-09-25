@@ -1,0 +1,56 @@
+config {
+  renderCharset = utf-8
+  metaCharset = utf-8
+  sendCacheHeaders = 1
+  doctype = {$docTypeToUse}
+
+  absRefPrefix = auto
+
+  removeDefaultJS = external
+
+  # cross domain linking
+  typolinkEnableLinksAcrossDomains = 1
+
+
+  sword_standAlone = 0
+  sword_noMixedCase = 0
+  intTarget = _self
+  extTarget = _blank
+  spamProtectEmailAddresses = -2
+  spamProtectEmailAddresses_atSubst = @~@
+  no_cache = 0
+  additionalHeaders = Content-Type:text/html;charset=utf-8
+
+  content_from_pid_allowOutsideDomain = 1
+  pageTitleFirst = 1
+  headerComment = {$headercomment}
+
+
+  simulateStaticDocuments = 0
+  admPanel = {$userAdmPanelOn}
+  xhtml_cleaning = {$userXhtmlCleaning}
+  disablePrefixComment = {$userDisablePrefComm}
+
+
+  contentObjectExceptionHandler = 0
+
+  typolinkLinkAccessRestrictedPages = {$loginPid}
+
+}
+
+# live mode
+[{$liveMode} == 1]
+  config {
+    compressJs = 1
+    concatenateJs = 0
+    compressCss = 1
+    disablePrefixComment = 1
+
+    contentObjectExceptionHandler = WapplerSystems\WsT3bootstrap\Frontend\ContentObject\Exception\ProductionExceptionHandler
+  }
+[END]
+
+
+
+
+

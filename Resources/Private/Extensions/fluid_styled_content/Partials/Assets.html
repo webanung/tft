@@ -1,0 +1,47 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:wsscss="http://typo3.org/ns/WapplerSystems/WsScss/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:section name="Image">
+    <wsscss:asset.scss identifier="image" href="EXT:tft/Resources/Private/SCSS/effects/image.scss"/>
+
+    <f:if condition="{data.image_zoom}">
+        <f:render section="Lightbox" arguments="{_all}" />
+    </f:if>
+</f:section>
+
+<f:section name="Video">
+    <wsscss:asset.scss identifier="video" href="EXT:tft/Resources/Private/SCSS/components/video.scss"/>
+    <f:asset.script identifier="optinvideo" src="EXT:tft/Resources/Public/JavaScript/opt-in/opt-in-video.js"/>
+</f:section>
+
+<f:section name="CompareSlider">
+    <wsscss:asset.scss identifier="compareslider" href="EXT:tft/Resources/Private/SCSS/components/compare-slider.scss"/>
+    <f:asset.script identifier="compareslider" src="EXT:tft/Resources/Public/JavaScript/compare-slider/cndk.beforeafter.js"/>
+</f:section>
+
+<f:section name="Counterbar">
+    <wsscss:asset.scss identifier="counterbar" href="EXT:tft/Resources/Private/SCSS/components/counterbar.scss"/>
+    <f:asset.script identifier="counterbar" src="EXT:tft/Resources/Public/JavaScript/counterbar.js"/>
+</f:section>
+
+<f:section name="Card">
+    <wsscss:asset.scss identifier="card" href="EXT:tft/Resources/Private/SCSS/components/card.scss"/>
+</f:section>
+
+<f:section name="Lightbox">
+    <wsscss:asset.scss identifier="glightbox" href="EXT:tft/Resources/Private/SCSS/components/glightbox.scss"/>
+    <f:asset.script identifier="glightbox" src="EXT:tft/Resources/Public/JavaScript/glightbox/glightbox.min.js"/>
+</f:section>
+
+<f:section name="Element">
+    <f:if condition="{loadAos}">
+        <f:asset.script identifier="oas" src="EXT:tft/Resources/Public/JavaScript/aos/aos.js" />
+        <wsscss:asset.scss identifier="oas" href="EXT:tft/Resources/Private/SCSS/aos/aos.scss" />
+    </f:if>
+    <f:if condition="{effects.parallaxBg}">
+        <f:asset.script identifier="jquery.parallax" src="EXT:tft/Resources/Public/JavaScript/plugins/jquery.parallax.min.js" />
+        <wsscss:asset.scss identifier="parallax" href="EXT:tft/Resources/Private/SCSS/effects/parallaxBg.scss" />
+    </f:if>
+
+</f:section>
+
+</html>

@@ -1,0 +1,12 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                templateRootPaths:
+                  70: 'EXT:tft/Resources/Private/Extensions/Form/Templates/'
+                partialRootPaths:
+                  70: 'EXT:tft/Resources/Private/Extensions/Form/Partials/'

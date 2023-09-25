@@ -1,0 +1,101 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:wsscss="http://typo3.org/ns/WapplerSystems/WsScss/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<wsscss:asset.scss identifier="forms" href="EXT:tft/Resources/Private/SCSS/components/forms.scss" />
+
+
+<f:flashMessages/>
+<f:if condition="{cookieWarning}">
+    <f:render partial="CookieWarning" />
+</f:if>
+
+<f:if condition="{messageKey}">
+    <div class="alert alert-{messageKey}">
+    <h4>
+        <f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_header'}"/>
+    </h4>
+    <p>
+        <f:render partial="RenderLabelOrMessage" arguments="{key: '{messageKey}_message'}"/>
+    </p>
+    </div>
+</f:if>
+<f:if condition="{onSubmit}">
+    <f:then>
+        <f:form target="_top" fieldNamePrefix="" action="login" onsubmit="{onSubmit}">
+            <f:render section="content" arguments="{_all}"/>
+        </f:form>
+    </f:then>
+    <f:else>
+        <f:form target="_top" fieldNamePrefix="" action="login">
+            <f:render section="content" arguments="{_all}"/>
+        </f:form>
+    </f:else>
+</f:if>
+
+<f:if condition="{settings.showForgotPassword}">
+    <f:link.action class="mt-5" action="recovery" controller="PasswordRecovery">
+        <f:render partial="RenderLabelOrMessage" arguments="{key: 'forgot_header'}"/>
+    </f:link.action>
+</f:if>
+
+<f:section name="content">
+    <fieldset>
+        <legend>
+            <f:translate key="login"/>
+        </legend>
+        <div class="form-group row mb-3">
+            <label class="col-12 col-sm-3 col-md-2 col-form-label"><f:translate key="username"/></label>
+            <div class="col-12 col-sm-9 col-md-10"><f:form.textfield class="form-control" name="user"/></div>
+        </div>
+        <div class="form-group row mb-3">
+            <label class="col-12 col-sm-3 col-md-2 col-form-label"><f:translate key="password"/></label>
+            <div class="col-12 col-sm-9 col-md-10"><f:form.password class="form-control" name="pass" data="{rsa-encryption: ''}"/></div>
+        </div>
+
+        <f:if condition="{permaloginStatus} > -1">
+            <div class="form-group row mb-3">
+                <div class="col-12 col-sm-3 col-md-2 col-form-label"></div>
+                <div class="col-12 col-sm-9 col-md-10">
+                    <div class="custom-control custom-checkbox">
+                        <f:if condition="{permaloginStatus} == 1">
+                            <f:then>
+                                <f:form.hidden name="permalogin" value="0" additionalAttributes="{disabled: 'disabled'}"/>
+                                <f:form.checkbox class="form-check-input" name="permalogin" id="permalogin" value="1" checked="checked"/>
+                            </f:then>
+                            <f:else>
+                                <f:form.hidden name="permalogin" value="0"/>
+                                <f:form.checkbox class="form-check-input" name="permalogin" id="permalogin" value="1"/>
+                            </f:else>
+                        </f:if>
+                        <label for="permalogin" class="form-check-label"><f:translate id="permalogin"/></label>
+                    </div>
+                </div>
+            </div>
+        </f:if>
+
+        <div class="row">
+            <div class="col-12 col-sm-9 col-md-10 ml-auto">
+                <f:form.submit class="btn btn-primary" value="{f:translate(key: 'login')}" name="submit"/>
+            </div>
+        </div>
+
+        <div class="felogin-hidden">
+            <f:form.hidden name="logintype" value="login"/>
+            <f:form.hidden name="pid" value="{storagePid}"/>
+            <f:if condition="{redirectURL}!=''">
+                <f:form.hidden name="redirect_url" value="{redirectURL}" />
+            </f:if>
+            <f:if condition="{referer}!=''">
+                <f:form.hidden name="referer" value="{referer}" />
+            </f:if>
+            <f:if condition="{redirectReferrer}!=''">
+                <f:form.hidden name="redirectReferrer" value="off" />
+            </f:if>
+            <f:if condition="{noRedirect}!=''">
+                <f:form.hidden name="noredirect" value="1" />
+            </f:if>
+
+            {extraHidden}
+        </div>
+    </fieldset>
+</f:section>
+</html>

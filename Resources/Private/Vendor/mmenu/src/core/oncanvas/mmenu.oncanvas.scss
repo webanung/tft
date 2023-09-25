@@ -1,0 +1,24 @@
+@use "../../mixins";
+@use "../../variables";
+
+//	Variables
+:root {
+    //	sizes
+    --mm-lineheight: 20px;
+    --mm-listitem-size: 50px;
+    --mm-navbar-size: 50px;
+    --mm-toggle-size: 34px;
+}
+
+.mm-hidden {
+    display: none !important;
+}
+
+.mm-wrapper {
+    overflow-x: hidden;
+    position: relative;
+}
+
+@import "button", "button.rtl", "divider", "listitem", "listitem.rtl", "menu",
+    "menu.rtl", "navbar", "navbar.rtl", "panel", "panel.rtl", "panels", "toggle",
+    "vertical";

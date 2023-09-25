@@ -1,0 +1,9 @@
+config {
+  index_enable = {$userIndexingOn}
+  index_externals = {$userIndexExternalsOn}
+  index_metatags = {$userIndexMetaTagsOn}
+}
+
+# delete "page" label in pagination
+plugin.tx_indexedsearch._LOCAL_LANG.de.displayResults.page =
+plugin.tx_indexedsearch._LOCAL_LANG.default.displayResults.page =

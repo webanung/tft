@@ -1,0 +1,8 @@
+
+
+TCEFORM.tt_content.image.config.overrideChildTca.columns.extended_design.addItems {
+    milo = Milo
+}
+TCEFORM.tt_content.assets.config.overrideChildTca.columns.extended_design.addItems {
+    milo = Milo
+}

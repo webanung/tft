@@ -1,0 +1,38 @@
+# Section index (page content marked for section menus):
+# ...
+#
+# CType: onepage_menu
+
+tt_content.onepage_menu =< lib.contentElement
+tt_content.onepage_menu {
+  templateName = OnePageMenu
+  dataProcessing {
+    10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+    10 {
+      includeNotInMenu = 1
+      special = list
+      special {
+        value {
+          field = pages
+          override {
+            data = page:uid
+            if {
+              isFalse.field = pages
+            }
+          }
+        }
+      }
+
+      dataProcessing {
+        20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+        20 {
+          table = tt_content
+          pidInList.field = uid
+          as = content
+          where = sectionIndex = 1
+          orderBy = sorting ASC
+        }
+      }
+    }
+  }
+}

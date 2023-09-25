@@ -1,0 +1,28 @@
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-transparent-white {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.bg-lightgray {
+  background: #f7f7f7;
+}
+
+.bg-lightblue {
+  background-color: $lightblue;
+}
+
+@each $name, $color in $theme-colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}

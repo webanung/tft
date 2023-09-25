@@ -1,0 +1,20 @@
+#lib.parseFunc_RTE.tags.link.typolink {
+#  wrap = <i class="fa"></i>|
+#  ATagBeforeWrap = 1
+#}
+
+lib.parseFunc_RTE.externalBlocks := addToList(pre)
+lib.parseFunc_RTE.externalBlocks {
+  pre.stripNL = 1
+  pre.stdWrap.parseFunc =< lib.parseFunc
+  pre.stdWrap.parseFunc.makelinks = 0
+}
+
+# Fix, weil sonst die Klassen in Links entfernt werden
+lib.parseFunc.tags.a.typolink.ATagParams.data = parameters:allParams
+lib.parseFunc_RTE.tags.a.typolink.ATagParams.data = parameters:allParams
+
+# remove contenttable class and allow bootstrap classes
+lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser {
+  tags.table.fixAttrib.class >
+}

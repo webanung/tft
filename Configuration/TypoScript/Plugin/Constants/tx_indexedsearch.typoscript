@@ -1,0 +1,3 @@
+plugin.tx_indexedsearch.view.templateRootPath = EXT:tft/Resources/Private/Extensions/IndexedSearch/Templates/
+plugin.tx_indexedsearch.view.partialRootPath = EXT:tft/Resources/Private/Extensions/IndexedSearch/Partials/
+plugin.tx_indexedsearch.view.layoutRootPath = EXT:tft/Resources/Private/Extensions/IndexedSearch/Layouts/

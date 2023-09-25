@@ -1,0 +1,14 @@
+
+@import "../bootstrap/tables";
+
+.ce-table {
+  @extend .table;
+}
+
+.ce-table-bordered {
+  @extend .table-bordered;
+}
+
+table caption {
+  font-size: 0.8rem;
+}

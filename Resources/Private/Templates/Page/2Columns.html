@@ -1,0 +1,44 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:ws="http://typo3.org/ns/WapplerSystems/WsT3bootstrap/ViewHelpers">
+
+    <f:layout name="Page"/>
+
+
+    <f:section name="AdditionalSkipLinks">
+
+        <f:link.page class="visually-hidden visually-hidden-focusable" section="sub-nav">
+            <f:translate key="LLL:EXT:tft/Resources/Private/Language/locallang.xlf:jump_to_sub_navigation"/>
+        </f:link.page>
+
+    </f:section>
+
+
+    <f:section name="HeaderContent">
+        <f:render partial="Hero" section="Hero" arguments="{_all}"/>
+    </f:section>
+
+    <f:section name="Content">
+
+        <div class="container">
+            <div class="row" role="main">
+
+                <ws:column lg="9" class="col-main o-1 o-sm-1 o-md-1 o-lg-2 high-ct">
+                    <!--TYPO3SEARCH_begin-->
+                    <v:content.render column="0"/>
+                    <!--TYPO3SEARCH_end-->
+                </ws:column>
+
+                <ws:column lg="3" class="col-menu o-2 o-sm-2 o-md-2 o-lg-1" role="complementary">
+                    <f:render partial="Navigation/Sub" section="Default" arguments="{_all}"/>
+                    <!--TYPO3SEARCH_begin-->
+                    <v:content.render column="1"/>
+                    <!--TYPO3SEARCH_end-->
+                </ws:column>
+
+            </div>
+        </div>
+    </f:section>
+
+</div>

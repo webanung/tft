@@ -1,0 +1,2 @@
+#plugin.tx_events2.view.partialRootPath = EXT:tft/Resources/Private/Extensions/Events2/Partials/
+#plugin.tx_events2.view.templateRootPath = EXT:tft/Resources/Private/Extensions/Events2/Templates/

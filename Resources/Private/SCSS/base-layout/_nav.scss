@@ -1,0 +1,114 @@
+@import "../bootstrap/nav";
+
+#nav-primary {
+  &:not(.fixed-top){
+    position: relative;
+    z-index: 1040;
+  }
+  .frame-default {
+    overflow: visible;
+  }
+
+  transition: transform 0.4s;
+  transform: translateY(0);
+
+  &.navbar-shrinked {
+    @include media-breakpoint-up(lg) {
+      transform: translateY(-36px);
+    }
+  }
+
+}
+
+.nav-calltoaction {
+
+  a {
+    line-height: 3rem;
+    font-size: 2rem;
+    display: block;
+    white-space: nowrap;
+    text-align: left;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      left: -3rem;
+    }
+  }
+
+  i {
+    line-height: inherit;
+    display: inline-block;
+    width: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  span {
+    font-size: 1rem;
+    vertical-align: bottom;
+    display: inline-block;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 1rem;
+    span {
+      display: none;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    flex-direction: column;
+    z-index: 17;
+
+    &:before {
+      content: ' ';
+      margin-top: -9rem;
+    }
+
+    a {
+      background: #fff;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, .34);
+      width: 9rem;
+      left: -3rem;
+      position: absolute;
+      transition: left .35s ease-in-out;
+
+      &:hover, &:focus {
+        left: -9rem;
+      }
+    }
+
+    & > div {
+      position: relative;
+      text-align: left;
+      height: 4rem;
+    }
+  }
+
+}
+
+.nav-aria {
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 39;
+
+  &.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+    &:hover, &:active {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+}
+
+#nav-primary-placeholder{
+  display: none;
+}

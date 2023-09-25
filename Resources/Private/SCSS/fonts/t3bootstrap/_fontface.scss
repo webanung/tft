@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "t3bootstrap";
+  src: url("#{$t3b-font-path}t3bootstrap.eot");
+  src: url("#{$t3b-font-path}t3bootstrap.eot?#iefix") format("embedded-opentype"),
+  url("#{$t3b-font-path}t3bootstrap.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

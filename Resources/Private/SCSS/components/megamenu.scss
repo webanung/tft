@@ -1,0 +1,25 @@
+@import "init";
+
+.megamenu {
+
+  position: static;
+
+  > li.dropdown-mega {
+    position: static;
+  }
+
+  .dropdown-menu {
+    top: auto;
+    right: 0;
+  }
+
+  .dropdown-content {
+    padding: 1em;
+  }
+}
+
+.frame-type-wst3bootstrap_megamenu {
+  & > .ce-content {
+    overflow: inherit;
+  }
+}

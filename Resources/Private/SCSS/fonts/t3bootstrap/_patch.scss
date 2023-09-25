@@ -1,0 +1,8 @@
+
+.t3b-icon-file-jpg:before {
+  @extend .t3b-icon-file-image;
+}
+
+.t3b-icon-file-mp3:before {
+  @extend .t3b-icon-file-audio;
+}

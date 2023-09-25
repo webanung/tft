@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-07T11:13:04Z"
+		  product-name="tft">
+		<header/>
+		<body>
+
+			<trans-unit id="copyright">
+				<source>t3Bootstrap template by</source>
+			</trans-unit>
+
+			<trans-unit id="search">
+				<source>Search</source>
+			</trans-unit>
+			<trans-unit id="searchPhrase">
+				<source>Search phrase</source>
+			</trans-unit>
+			<trans-unit id="toSearchPage">
+				<source>To search page</source>
+			</trans-unit>
+			<trans-unit id="aria.openPageInLanguage">
+				<source>Opens the link in language %s.</source>
+			</trans-unit>
+
+
+			<trans-unit id="link.more">
+				<source>Read more</source>
+			</trans-unit>
+
+
+			<!-- Link titles -->
+			<trans-unit id="more_link_titleText">
+				<source>Read more</source>
+			</trans-unit>
+			<trans-unit id="more_link_altText">
+				<source>Read more</source>
+			</trans-unit>
+			<trans-unit id="next_link_titleText">
+				<source>Read more</source>
+			</trans-unit>
+			<trans-unit id="next_link_altText">
+				<source>Read more</source>
+			</trans-unit>
+
+
+			<trans-unit id="news.show_all_news">
+				<source>Show all news</source>
+			</trans-unit>
+
+
+			<trans-unit id="email.title">
+				<source>Write us!</source>
+			</trans-unit>
+
+
+			<!-- aria -->
+			<trans-unit id="jump_to_main_navigation">
+				<source>Jump directly to main navigation</source>
+			</trans-unit>
+			<trans-unit id="jump_to_content">
+				<source>Jump directly to content</source>
+			</trans-unit>
+			<trans-unit id="jump_to_sub_navigation">
+				<source>Jump to sub navigation</source>
+			</trans-unit>
+			<trans-unit id="jump_to_meta_navigation">
+				<source>Jump to meta navigation</source>
+			</trans-unit>
+			<trans-unit id="jump_to_language_navigation">
+				<source>Jump to language navigation</source>
+			</trans-unit>
+
+			<trans-unit id="sub_navigation">
+				<source>Sub navigation</source>
+			</trans-unit>
+			<trans-unit id="main_navigation">
+				<source>Main navigation</source>
+			</trans-unit>
+			<trans-unit id="meta_navigation">
+				<source>Meta navigation</source>
+			</trans-unit>
+			<trans-unit id="language_navigation">
+				<source>Language navigation</source>
+			</trans-unit>
+
+
+			<trans-unit id="aria.contrast">
+				<source>Contrast</source>
+			</trans-unit>
+			<trans-unit id="aria.easy-language">
+				<source>Easy language</source>
+			</trans-unit>
+			<trans-unit id="aria.help">
+				<source>Help</source>
+			</trans-unit>
+			<trans-unit id="aria.nav_pagination">
+				<source>Browse the results pages</source>
+			</trans-unit>
+
+
+			<trans-unit id="dateFormat">
+				<source>%m/%d/%Y</source>
+			</trans-unit>
+
+			<trans-unit id="openSearchbar">
+				<source>Open search bar</source>
+			</trans-unit>
+			<trans-unit id="openNavigation">
+				<source>Open navigation</source>
+			</trans-unit>
+
+
+			<trans-unit id="cookieman.suppressionWarning">
+				<source>The cookie window is suppressed by a browser extension. Please unblock the website.</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

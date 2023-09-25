@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:ws="http://typo3.org/ns/WapplerSystems/WsT3bootstrap/ViewHelpers"
+     data-namespace-typo3-fluid="true">
+
+    <v:menu entryLevel="{settings.menu.main.entryLevel}" showAccessProtected="{settings.menu.showAccessProtectedPages}" expandAll="false" useShortcutUid="false" classHasSubpages="">
+        <f:if condition="{menu}">
+
+            <ul class="nav navbar-nav d-print-none">
+                <f:for each="{menu}" as="menuPage" iteration="iteration">
+                    <li class="nav-item">
+
+                        <ws:menu.link class="nav-link {menuPage.class}" href="{menuPage.link}">
+                            {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+                        </ws:menu.link>
+
+                    </li>
+                </f:for>
+            </ul>
+        </f:if>
+    </v:menu>
+
+
+</html>

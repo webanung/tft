@@ -1,0 +1,17 @@
+
+tx_news.templateLayouts {
+    SlimImageLatest = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:news.templateLayouts.slimImageLatest
+}
+
+TCEFORM.tx_news_domain_model_news.fal_media.config.overrideChildTca.columns.crop.config.cropVariants {
+    slim {
+        title = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:cropVariants.slim
+        allowedAspectRatios {
+            5:2 {
+                title = 5:2
+                value = 2.5
+            }
+        }
+    }
+}
+

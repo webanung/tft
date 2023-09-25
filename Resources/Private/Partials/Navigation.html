@@ -1,0 +1,303 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+      xmlns:ws="http://typo3.org/ns/WapplerSystems/WsT3bootstrap/ViewHelpers"
+      xmlns:wsscss="http://typo3.org/ns/WapplerSystems/WsScss/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+
+    <div class="d-block navbar navbar-expand-lg navbar-light navbar-{settings.menu.main.menuType}">
+
+        <div class="container">
+
+            <f:render section="Standard" arguments="{_all}"/>
+
+        </div>
+
+        <f:if condition="{settings.header.breadcrumb} == 2">
+            <f:render section="Container" partial="Navigation/Breadcrumb" arguments="{_all}"/>
+        </f:if>
+
+
+    </div>
+
+</f:section>
+
+
+<f:section name="Standard">
+	
+    <nav class="d-flex flex-grow-1 justify-content-between p-relative">
+
+        <f:if condition="{settings.logo}">
+            <div itemscope itemtype="http://schema.org/Organization" class="navbar-brand">
+                <f:link.page pageUid="{settings.menu.homePageUID}" class="d-block"  additionalAttributes="{itemprop:'url'}">
+                    <img width="352" height="62" id="logo" src="{f:uri.image(src:settings.logo)}" class="img-fluid high-ct-hidden" alt="{siteConfig.websiteTitle}" itemprop="logo"/>
+                    <f:if condition="{settings.logoHighContrast}">
+                        <img src="{f:uri.image(src:settings.logoHighContrast)}" class="img-fluid high-ct-only" alt="{siteConfig.websiteTitle}" title="{siteConfig.websiteTitle}" />
+                    </f:if>
+                </f:link.page>
+            </div>
+        </f:if>
+
+        <div class="d-flex flex-lg-grow-1 flex-nowrap justify-content-between{f:if(condition: '{settings.menu.main.menuType} == \'overlay-menu\'', then: ' flex-row-reverse')}">
+
+            <f:spaceless>
+                <f:switch expression="{settings.menu.main.menuType}">
+                    <f:case value="megamenu">
+                        <div class="d-none d-lg-flex align-items-end">
+                            <v:content.render column="0" pageUid="{settings.menu.main.megaMenuPid}"/>
+                        </div>
+                    </f:case>
+                    <f:case value="smartmenus">
+                        <div class="d-none d-lg-flex align-items-end">
+                            <f:render partial="Navigation/Dropdown" section="SmartMenus" arguments="{_all}"/>
+                        </div>
+                    </f:case>
+                    <f:case value="onepage">
+                        <div class="collapse navbar-collapse" id="t3b__navbar-main__collapse">
+                            <f:render section="SectionIndex" arguments="{_all}"/>
+                            <div class="d-block d-md-none">
+                                <f:render partial="Navigation/Language" section="Default" arguments="{_all}"/>
+                            </div>
+                        </div>
+                    </f:case>
+                    <f:case value="overlay-menu">
+
+                    </f:case>
+                    <f:case value="bootstrap">
+                        <div class="d-none d-lg-flex align-items-end">
+                            <f:render partial="Navigation/Dropdown" section="Bootstrap" arguments="{_all}"/>
+                        </div>
+                    </f:case>
+                    <f:defaultCase>
+                        <div class="d-none d-lg-block">
+                            <f:render partial="Navigation/Simple" arguments="{_all}"/>
+                        </div>
+                    </f:defaultCase>
+                </f:switch>
+            </f:spaceless>
+
+            <f:if condition="{settings.menu.main.menuType} != 'overlay-menu'">
+                <f:if condition="{settings.header.searchbox}">
+
+                    <div class="dropdown d-none d-lg-block d-print-none btn-group dropstart" id="searchbar-wrapper-desktop">
+                        <a class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" id="searchDropdownDesktop" href="{f:uri.page(pageUid:settings.searchPagePID)}" aria-label="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xlf:toSearchPage')}" aria-haspopup="true">
+                            <span class="searchbar-toggler-icon"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-search dropdown-align-right" aria-labelledby="searchDropdownDesktop">
+                            <f:render partial="Searchbox" section="Default" arguments="{formname: 'default', siteConfig: siteConfig}"/>
+                        </div>
+                    </div>
+
+                </f:if>
+            </f:if>
+
+            <div class="nav{f:if(condition: '{settings.menu.main.menuType} != \'overlay-menu\'', then: ' d-lg-none')} d-print-none flex-nowrap">
+                <f:if condition="{settings.header.searchbox}">
+                    <div class="nav-item position-relative">
+
+                        <a class="btn btn-outline-secondary  d-md-block" id="searchDropdown"  href="{f:uri.page(pageUid:settings.searchPagePID)}"
+                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="searchbar-toggler-icon"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-search dropdown-align-right" aria-labelledby="searchDropdown">
+                            <f:render partial="Searchbox" section="Default" arguments="{formname: 'default', siteConfig: siteConfig}"/>
+                        </div>
+
+                        <button class="btn searchbar-toggler mr-2 collapsed d-none d-md-none" aria-expanded="false" data-bs-toggle="collapse"
+                                data-bs-target="#bd-search-nav" aria-label="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xlf:openSearchbar')}"><span class="searchbar-toggler-icon"></span></button>
+
+                    </div>
+                </f:if>
+                <div class="nav-item">
+                    <f:switch expression="{settings.menu.main.menuType}">
+                        <f:case value="onepage">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#t3b__navbar-main__collapse" aria-controls="t3b__navbar-main__collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </f:case>
+                        <f:case value="overlay-menu">
+                            <a class="nav-link navbar-toggler d-block" href="#overlaymenu"><span class="navbar-toggler-icon"></span></a>
+                        </f:case>
+                        <f:defaultCase>
+                            <a class="nav-link navbar-toggler" href="#mobile-menu" title="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xlf:openNavigation')}"><span class="navbar-toggler-icon"></span></a>
+                        </f:defaultCase>
+                    </f:switch>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </nav>
+
+
+</f:section>
+
+
+<f:section name="SectionIndex">
+
+    <f:cObject typoscriptObjectPath="tt_content.onepage_menu"/>
+
+</f:section>
+
+
+<f:section name="SidebarMenu">
+
+    <f:if condition="{settings.menu.mobile.replaceSiteRootWithPageId} && {v:page.info(field: 'is_siteroot')}">
+        <v:variable.set name="siteRootReplacement">{settings.menu.mobile.replaceSiteRootWithPageId}</v:variable.set>
+    </f:if>
+
+    <v:page.breadCrumb pageUid="{siteRootReplacement}" showHiddenInMenu="true" entryLevel="{settings.menu.mobile.entryLevel}" classActive="" classCurrent="active" useShortcutUid="false" showCurrent="1" divider="" as="rootline">
+
+        <f:render section="SidebarMenuItem" arguments="{rootline:rootline, settings:settings}" />
+
+    </v:page.breadCrumb>
+
+    <f:comment>
+    <ws:render.menuCache enabled="{settings.menu.mobile.cache}" identity="mobileMenu_L{siteConfig.sys_language_uid}_{ws:page.topPageInBreadCrumb(entryLevel:settings.menu.main.entryLevel)}">
+
+        <f:spaceless>
+            <v:menu entryLevel="{settings.menu.main.entryLevel}" showAccessProtected="{settings.menu.showAccessProtectedPages}" expandAll="false" useShortcutUid="false" classCurrent="{f:if(condition:settings.menu.mobile.cache,then:'',else:'current')}" classActive="{f:if(condition:settings.menu.mobile.cache,then:'',else:'active')}">
+                <f:if condition="{menu}">
+
+                    <ul data-id="{data.uid}">
+                        <f:for each="{menu}" as="menuPage" iteration="iteration">
+
+                            <li class="{menuPage.class}">
+
+                                <a data-id="{menuPage.uid}" data-has-subpage="{f:if(condition:menuPage.hasSubPages,then:'true',else:'false')}" href="{f:if(condition: '!{menuPage.prevent_link}', then:menuPage.link, else: '#prevent-link')}" class="nav-link {menuPage.class} nav-item-{menuPage.uid}" {f:if(condition:menuPage.target,then:'target="{menuPage.target}"')}>
+                                {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+                                </a>
+
+                                <v:menu pageUid="{menuPage.uid}" showAccessProtected="{settings.menu.showAccessProtectedPages}" includeSpacers="false" expandAll="false" classCurrent="{f:if(condition:settings.menu.mobile.cache,then:'',else:'current')}" classActive="{f:if(condition:settings.menu.mobile.cache,then:'',else:'active')}">
+                                    <f:if condition="{menu}">
+                                        <ul>
+
+                                            <f:for each="{menu}" as="subMenuPage" iteration="subIteration">
+
+                                                <f:render section="NavItemMobile" arguments="{menuPage:subMenuPage, settings:settings}" />
+
+                                            </f:for>
+                                        </ul>
+                                    </f:if>
+                                </v:menu>
+
+                            </li>
+
+                        </f:for>
+                    </ul>
+
+                </f:if>
+            </v:menu>
+        </f:spaceless>
+    </ws:render.menuCache>
+    </f:comment>
+
+</f:section>
+
+<f:section name="SidebarMenuItem">
+
+    <v:variable.set name="this">{rootline -> v:iterator.shift()}</v:variable.set>
+    <v:variable.set name="rootline">{rootline -> v:iterator.slice(start:1)}</v:variable.set>
+
+    <ul data-id="{this.pid}">
+        <f:if condition="{rootline -> f:count()} == 0">
+            <f:then>
+                <v:menu pageUid="{this.pid}" classActive="">
+                    <f:if condition="{menu}">
+                        <f:for each="{menu}" as="menuPage">
+                        <li class="{menuPage.class}" data-id="{menuPage.uid}">
+                            <a href="{f:if(condition: '!{menuPage.prevent_link}', then:menuPage.link, else: '#prevent-link')}" class="{menuPage.class}" {f:if(condition:menuPage.target,then:'target="{menuPage.target}"')}>
+                            {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}</a>
+                        </li>
+                        </f:for>
+                    </f:if>
+                </v:menu>
+            </f:then>
+            <f:else>
+                <li data-id="{this.uid}">
+                    <a href="{this.link}">{this.linktext}</a>
+                    <f:render section="SidebarMenuItem" arguments="{rootline:rootline, settings:settings}" />
+                </li>
+            </f:else>
+        </f:if>
+
+    </ul>
+
+</f:section>
+
+<f:section name="MegaMenu">
+
+    <f:comment>TODO: Für Caching erst mit JavaScript vorbereiten!!</f:comment>
+
+    <div class="container navbar-default pt-1">
+
+        <nav class="navbar navbar-light clearfix mb-1">
+
+            <f:link.page pageUid="{settings.menu.homePageUID}" class="navbar-brand">
+                <f:image src="{settings.logo}" alt="{v:site.name()}" class="img-fluid" title="{v:site.name()}"/>
+            </f:link.page>
+
+            <div class="d-none d-md-block">
+                <v:content.render column="0" pageUid="{settings.menu.main.megaMenuPid}"/>
+            </div>
+
+            <a class="navbar-toggler float-right d-lg-none" href="#mobile-menu"></a>
+
+        </nav>
+
+    </div>
+</f:section>
+
+<f:section name="NavItem">
+
+    <li>
+        <a href="{f:if(condition: '!{menuPage.prevent_link}', then:menuPage.link, else: '#prevent-link')}" class="{menuPage.class} nav-item-{menuPage.uid}" {f:if(condition:menuPage.target,then:'target="{menuPage.target}"')}>
+        {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+        </a>
+
+        <v:menu pageUid="{menuPage.uid}" showAccessProtected="{settings.menu.showAccessProtectedPages}" includeSpacers="false" expandAll="false" classHasSubpages="dropdown-toggle-submenu">
+            <f:if condition="{menu}">
+                <ul>
+                    <f:for each="{menu}" as="subMenuPage" >
+
+                        <f:render section="NavItem" arguments="{menuPage:subMenuPage, settings:settings}" />
+
+                    </f:for>
+                </ul>
+            </f:if>
+        </v:menu>
+
+    </li>
+
+</f:section>
+
+
+<f:section name="NavItemMobile">
+
+    <li class="{menuPage.class}">
+        <a href="{f:if(condition: '!{menuPage.prevent_link}', then:menuPage.link, else: '#prevent-link')}" class="nav-link {menuPage.class} nav-item-{menuPage.uid}" {f:if(condition:menuPage.target,then:'target="{menuPage.target}"')}>
+        {f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}
+        </a>
+
+        <v:menu pageUid="{menuPage.uid}" showAccessProtected="{settings.menu.showAccessProtectedPages}" includeSpacers="false" expandAll="false" classCurrent="{f:if(condition:settings.menu.mobile.cache,then:'',else:'current')}" classActive="{f:if(condition:settings.menu.mobile.cache,then:'',else:'active')}">
+            <f:if condition="{menu}">
+                <ul>
+                    <f:for each="{menu}" as="subMenuPage" >
+
+                        <f:render section="NavItemMobile" arguments="{menuPage:subMenuPage, settings:settings}" />
+
+                    </f:for>
+                </ul>
+            </f:if>
+        </v:menu>
+
+    </li>
+
+</f:section>
+
+</html>

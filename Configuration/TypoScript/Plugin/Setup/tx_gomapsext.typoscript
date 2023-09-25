@@ -1,0 +1,9 @@
+plugin.tx_gomapsext {
+  view {
+
+    partialRootPaths {
+      20 = EXT:tft/Resources/Private/Extensions/go_maps_ext/Partials/
+    }
+
+  }
+}

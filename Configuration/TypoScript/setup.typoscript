@@ -1,0 +1,21 @@
+###################################################
+# Include all TypoScript files
+###################################################
+
+
+# Configuration
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tft/Configuration/TypoScript/Config/" extensions="typoscript">
+
+# Lib
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tft/Configuration/TypoScript/Lib/" extensions="typoscript">
+
+## Page
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tft/Configuration/TypoScript/Page/" extensions="typoscript">
+
+
+# Plugin
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tft/Configuration/TypoScript/Plugin/Setup/" extensions="typoscript">
+
+
+# Content elements
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tft/Configuration/TypoScript/Lib/ContentElement/" extensions="typoscript">

@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+
+    <f:if condition="{settings.aria.activated}">
+
+        <f:asset.script identifier="cookie" src="EXT:tft/Resources/Public/JavaScript/jquery/jquery.cookie.js" />
+        <div class="fixed-bottom">
+            <nav class="nav-aria navbar navbar-dark bg-dark high-ct-inverted navbar-expand-sm  compensate-for-scrollbar">
+                <div class="container">
+                    <ul class="navbar-nav nav-fill w-100">
+
+                        <f:if condition="{settings.aria.contrast.activated}">
+                            <li class="nav-item">
+                                <a class="nav-link btn-contrast" href="#"><i class="t3b-icon-adjust" aria-hidden="true"></i> <f:translate key="LLL:EXT:tft/Resources/Private/Language/locallang.xlf:aria.contrast"/></a>
+                            </li>
+                        </f:if>
+
+                        <f:if condition="{settings.aria.easy-language.linkType} == 'page'">
+                            <li class="nav-item">
+                                <f:link.page pageUid="{settings.aria.easy-language.pageId}" class="nav-link btn-easy-language"><i class="t3b-icon-book-reader" aria-hidden="true"></i> <f:translate key="LLL:EXT:tft/Resources/Private/Language/locallang.xlf:aria.easy-language"/></f:link.page>
+                            </li>
+                        </f:if>
+
+                        <f:if condition="{settings.aria.help.pageId}">
+                            <li class="nav-item">
+                                <f:link.page pageUid="{settings.aria.help.pageId}" class="nav-link btn-help"><i class="t3b-icon-question-circle" aria-hidden="true"></i> <f:translate key="LLL:EXT:tft/Resources/Private/Language/locallang.xlf:aria.help"/></f:link.page>
+                            </li>
+                        </f:if>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </f:if>
+
+</f:section>
+</html>

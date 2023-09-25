@@ -1,0 +1,107 @@
+@import "../bootstrap/type";
+
+@each $h, $value in $headings-margins-bottom {
+  .#{$h}-mb {
+    margin-bottom: $value;
+  }
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+a.external-link-new-window, .main-content a[target="_blank"]:not(.no-icon) {
+  &:before {
+    @extend .t3b-icon;
+    @extend .t3b-icon-external-link-alt;
+    @include link-icon();
+  }
+}
+
+
+figure.image a[target="_blank"] {
+  &:before {
+    display: none !important;
+  }
+}
+
+a.internal-link {
+}
+
+a.internal-link-new-window {
+
+}
+
+a.download {
+}
+
+a.mail, a[data-mailto-token] {
+  &:before {
+    @extend .t3b-icon;
+    @extend .t3b-icon-envelope;
+    @include link-icon();
+    vertical-align: middle;
+  }
+}
+
+figure a:before {
+  display: none;
+}
+
+ul.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    a {
+      color: #666;
+      display: block;
+      border-bottom: 1px solid #ECEBEB;
+      padding: 3px 0;
+    }
+  }
+}
+
+acronym {
+  cursor: help;
+}
+
+figcaption .copyright {
+  font-size: 0.7rem;
+  float: right;
+  padding-right: 0.1rem;
+}
+
+.subheadline {
+  color: #666;
+}
+
+.indent .ce-bodytext {
+  padding: 1rem 0;
+  @include media-breakpoint-up(sm) {
+    padding: 3rem;
+  }
+}
+
+.hfooter1-mb {
+  margin-bottom: 0.5rem;
+}
+
+/* examples */
+.style1 {
+  color: darkred;
+}
+

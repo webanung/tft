@@ -1,0 +1,35 @@
+{
+	"name": "webanug/tft",
+	"type": "typo3-cms-extension",
+	"description": "",
+	"keywords": [
+		"TYPO3",
+		"extension"
+	],
+	"homepage": "https://weban.de",
+	"authors": [
+		{
+			"name": "Lars Tiefland",
+			"role": "Developer",
+			"homepage": "https://weban.de"
+		}
+	],
+	"license": [
+		"GPL-2.0+"
+	],
+	"require": {
+		"typo3/cms-core": "^11.5",
+		"wapplersystems/ws-scss": "^11.0",
+		"fluidtypo3/vhs": "^6",
+		"webanug/ws_t3bootstrap": "^11.5.0"
+	},
+	"suggest": {
+	},
+	"require-dev": {
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "tft"
+		}
+	}
+}

@@ -1,0 +1,99 @@
+################
+# page
+################
+page = PAGE
+page.typeNum = 0
+
+page.5 = FLUIDTEMPLATE
+page.5 {
+  dataProcessing {
+
+    30 = WapplerSystems\WsT3bootstrap\Frontend\DataProcessing\SiteConfigProcessor
+    40 = WapplerSystems\WsT3bootstrap\Frontend\DataProcessing\PageHeroProcessor
+    50 = TYPO3\CMS\Frontend\DataProcessing\SiteProcessor
+    60 = WapplerSystems\WsT3bootstrap\Frontend\DataProcessing\LanguageMenuProcessor
+
+  }
+
+  templateName = TEXT
+  templateName.stdWrap {
+    cObject = TEXT
+    cObject {
+      data = levelfield:-2,backend_layout_next_level,slide
+      override.field = backend_layout
+      split {
+        token = __
+        returnKey = 1
+      }
+    }
+
+    ifEmpty = 1Column
+  }
+
+  layoutRootPaths {
+    10 = EXT:tft/Resources/Private/Layouts/
+  }
+
+  templateRootPaths {
+    10 = EXT:tft/Resources/Private/Templates/Page/
+  }
+
+  partialRootPaths {
+    10 = EXT:tft/Resources/Private/Partials/
+  }
+
+  variables {
+
+
+  }
+
+}
+
+
+# body tag
+page.bodyTagCObject = COA
+page.bodyTagCObject {
+  5 = TEXT
+  5.value = <body
+
+  11 = COA
+  11 {
+    stdWrap.noTrimWrap = | class="|" |
+    1 = TEXT
+    1.value = {$cssClass}
+
+    2 = TEXT
+    2.stdWrap {
+      noTrimWrap = | layout-||
+      cObject = TEXT
+      cObject {
+        data = levelfield:-2,backend_layout_next_level,slide
+        override.field = backend_layout
+        split {
+          token = __
+          returnKey = 1
+        }
+      }
+
+      ifEmpty = 1Column
+    }
+
+    3 = TEXT
+    3.stdWrap.noTrimWrap = | ||
+
+    4 = TEXT
+    4.value = {$layout}
+    4.stdWrap.noTrimWrap = | layout-||
+
+  }
+
+  20 = TEXT
+  20.value = {TSFE:id}
+  20.insertData = 1
+  20.noTrimWrap = | id="page_|">|
+}
+
+[siteLanguage("title") == "aria-language"]
+  page.bodyTagCObject.11.3.value = {$cssClassAria}
+[END]
+

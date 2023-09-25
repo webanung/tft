@@ -1,0 +1,68 @@
+#   Customization:
+#   You can specify certain content elements to have diffrent bg-colors as options available e.g.:
+#
+#   possibilities:
+#   keep only the defined items:    keepItems
+#   remove specific items:          removeItems
+#   add own/additional items:       addItems
+#
+#   see: https://docs.typo3.org/m/typo3/reference-tsconfig/master/en-us/PageTsconfig/TceForm.html
+#
+#
+#   CTypes in the following example are wst3bootstrap_container and textmedia.
+#
+#   TCEFORM.tt_content.bg_color_class.types.wst3bootstrap_container {
+#       keepItems = bg-primary, bg-secondary
+#   }
+#
+#   TCEFORM.tt_content.bg_color_class.types.textmedia {
+#       keepItems = bg-primary, bg-lightgray, bg-lightblue
+#   }
+#
+#   Or you can restrict/keep/add certain background colors globally e.g.:
+#
+#   TCEFORM.tt_content.bg_color_class{
+#       removeItems = bg-info
+#   }
+#
+#   Remind that by using composer mode, this file can be changed after an update.
+#   In this case you should write your changes directly into the tsconfig area inside the back end.
+#
+#   --------------------------------------------------------------------------------------------------------------------
+#
+#   Here is a full list of standard Background colors from ws_t3bootstrap:
+#
+#    # Custom Colors:
+#    bg-lightgray = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-lightgray
+#    bg-lightblue = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-lightblue
+#    bg-dark-gray = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-dark-gray
+#    # Bootstrap Theme Colors:
+#    bg-primary = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-primary
+#    bg-secondary = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-secondary
+#    bg-success = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-success
+#    bg-info = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-info
+#    bg-warning = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-warning
+#    bg-danger = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-danger
+#    bg-light = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-light
+#    bg-dark = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-dark
+#    # Bootstrap Color Palette:
+#    bg-blue = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-blue
+#    bg-indigo = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-indigo
+#    bg-purple = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-purple
+#    bg-pink = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-pink
+#    bg-red = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-red
+#    bg-orange = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-orange
+#    bg-yellow = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-yellow
+#    bg-green = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-green
+#    bg-teal = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-teal
+#    bg-cyan = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-cyan
+#    bg-white = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-white
+#    bg-gray = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-gray
+#    bg-gray-dark = LLL:EXT:ws_t3bootstrap/Resources/Private/Language/config_tsconfig.xlf:bg_color_class.bg-gray-dark
+
+#e.g.:
+#TCEFORM.tt_content.bg_color_class{
+#  addItems{
+#    bg-dark-gray = Dark Gray
+#  }
+#}

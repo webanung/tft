@@ -1,0 +1,12 @@
+
+TCEFORM.tx_news_domain_model_news.fal_media.config.overrideChildTca.columns.crop.config.cropVariants {
+    default {
+        title = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:cropVariants.standard
+        allowedAspectRatios {
+            NaN {
+                title = LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.ratio.free
+                value = 0.0
+            }
+        }
+    }
+}

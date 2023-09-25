@@ -1,0 +1,49 @@
+# news template layouts
+tx_news.templateLayouts {
+  List = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:news.templateLayouts.list
+  Latest = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:news.templateLayouts.latest
+}
+
+# CKEditor Konfiguration
+RTE.default.preset = tft
+RTE.config.tx_wst3bootstrap_card_element.bodytext.preset = tft
+
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tft/Configuration/TsConfig/Page/BackendLayouts/" extensions="tsconfig">
+
+
+TCEFORM.tt_content {
+
+  icon_size.addItems {
+    sm = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_size.sm
+    md = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_size.md
+    lg = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_size.lg
+    xl = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_size.xl
+  }
+
+  icon_color.addItems {
+    primary = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_color.primary
+    secondary = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_color.secondary
+  }
+
+  icon_style.addItems {
+    bg-circle = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_style.bg-circle
+    border-circle = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_style.border-circle
+    bg-square = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_style.bg-square
+    border-square = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_style.border-square
+    bg-border-circle = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:icon_style.bg-border-circle
+  }
+
+  header_layout.addItems {
+    footer1 = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:header_layout.footer1
+  }
+
+}
+
+TCEFORM.tt_content.layout.types.menu_abstract.addItems {
+  430 = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:layout.with_preview
+}
+
+TCEFORM.tt_content.layout.types.menu_sitemap_pages.addItems {
+  220 = LLL:EXT:tft/Resources/Private/Language/tsconfig.xlf:layout.show_selected_pages
+}

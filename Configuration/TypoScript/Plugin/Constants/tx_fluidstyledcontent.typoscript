@@ -1,0 +1,7 @@
+styles.templates.partialRootPath = EXT:tft/Resources/Private/Extensions/fluid_styled_content/Partials/
+styles.templates.templateRootPath = EXT:tft/Resources/Private/Extensions/fluid_styled_content/Templates/
+styles.templates.layoutRootPath = EXT:tft/Resources/Private/Extensions/fluid_styled_content/Layouts/
+
+
+styles.content.textmedia.linkWrap.lightboxCssClass = lightbox
+styles.content.textmedia.linkWrap.lightboxEnabled = 1

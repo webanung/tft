@@ -1,0 +1,542 @@
+####################################################
+## Copyright notice
+## (c) 2018 Sven Wappler <typo3YYYY@wappler.systems>
+## All rights reserved
+##
+## This script is licensed under a Creative Commons Licence
+## German language:
+## http://creativecommons.org/licenses/by-nc-sa/2.0/de/deed.de
+## English language:
+## http://creativecommons.org/licenses/by-nc-sa/2.0/de/deed.en
+##
+## This copyright notice MUST APPEAR in all copies of the script.
+####################################################
+## Bootstrap for Fluid
+## static Constants
+####################################################
+
+
+# customsubcategory=navigation=Navigation
+# customsubcategory=language=Language
+# customsubcategory=text=Text
+# customsubcategory=logo=Logo
+# customsubcategory=banner=Banner
+# customsubcategory=bodytag=Body tag
+# customsubcategory=development=Development
+# customsubcategory=breadcrumb=Breadcrumb
+# customsubcategory=textdirection=Text direction
+# customsubcategory=javascript=JavaScript
+# customsubcategory=jquery=jQuery
+# customsubcategory=screen=Screen
+# customsubcategory=domains=Domains
+# customsubcategory=general=Allgemein
+# customsubcategory=language-default=Standardsprache
+# customsubcategory=language-de=Sprache DE
+# customsubcategory=language-fr=Sprache FR
+# customsubcategory=language-nl=Sprache NL
+# customsubcategory=order=Sortierung
+# customsubcategory=custom=Benutzerdefiniert
+# customsubcategory=contact=Kontakt
+# customsubcategory=contrast=Kontrast
+# customsubcategory=easy-language=Leichte Sprache
+# customsubcategory=help=Hilfe
+# customcategory=tft-searchbox=Template: Searchbox
+# customcategory=tft-javascripts=Template: JavaScripts
+# customcategory=tft-header=Template: Header-Bereich
+# customcategory=tft-navigation=Template: Navigation
+# customcategory=tft-firstnavigation=Template: Hauptnavigation
+# customcategory=tft-meta=Template: Meta-Angaben
+# customcategory=tft-secondnavigation=Template: Sekundäre Navigation
+# customcategory=tft-mobilenavigation=Template: Mobile Navigation
+# customcategory=tft-footer=Template: Footer-Bereich
+# customcategory=tft-language=Template: Spracheinstellungen
+# customcategory=tft-expert-settings=Template: Fortgeschrittene Einstellungen
+# customcategory=tft-other-settings=Template: Sonstige Einstellungen
+# customcategory=tft-calltoaction=Template: Call To Action Leiste
+# customcategory=bootstrap-variables=Template: Bootstrap Variabeln
+# customcategory=tft-content=Template: Inhalt
+# customcategory=tft-aria=Template: Barrierefreiheit
+# customcategory=tft-design=Template: Design
+# customcategory=tft-icons=Template: Icons
+
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:tft/Configuration/TypoScript/Plugin/Constants/" extensions="typoscript">
+
+
+PAGE_TARGET = _self
+
+docTypeToUse = html5
+
+extkey = tft
+
+headercomment = Bootstrap Template by WapplerSystems. https://t3bootstrap.de
+
+plugin.tx_tft {
+  filepaths {
+    publicResources = EXT:tft/Resources/Public/
+    css = EXT:tft/Resources/Public/CSS/
+    scss = EXT:tft/Resources/Private/SCSS/
+    javascript = EXT:tft/Resources/Public/JavaScript/
+  }
+
+  view {
+    templateRootPath = EXT:tft/Resources/Private/Templates/
+    partialRootPath = EXT:tft/Resources/Private/Partials/
+    layoutRootPath = EXT:tft/Resources/Private/Layouts/
+  }
+}
+
+styles.content.imgtext.linkWrap.lightboxCssClass = lightbox
+
+######################## searchbox #########################
+
+# cat=tft-searchbox/enable/b; type=int+; label=Searchpage PID (all languages):UID of the page containing the Indexed-Search-Plugin - REQUIRED if searchbox is in use:
+searchPagePID =
+
+######################## header #########################
+
+
+# cat=tft-header/navigation/b; type=int; label=User Menu Folder ID: Id of the folder which contains the pages/shortcuts
+navigationUserEntryId =
+
+# cat=tft-header/other/a; type=int+; label=ID of the start page
+homePageUID = 0
+
+# cat=tft-header/other/b; type=text; label=Path to logo file
+logo = EXT:tft/Resources/Public/Images/logo.svgz
+
+# cat=tft-header/other/b; type=text; label=Path to high contrast logo file
+logoHighContrast =
+
+# cat=tft-header/other/d; type=boolean; label=Show searchbox
+searchbox = 1
+
+# cat=tft-header/breadcrumb/a; type=options[Keine=0,Unter dem Header=1,Unter der Navigation=2]; label=Show breadcrumb
+breadcrumb = 1
+
+# cat=tft-header/other/e; type=string; label=Class(es) of the top navigation wrapper
+topNavigationWrapperClass = bg-transparent-white
+
+# cat=tft-header/other/g; type=boolean; label=Overlay menu section:Makes the menu float above the content. Usefull for full size hero image
+overlayMenuSection = 0
+
+######################## navigation #########################
+
+# cat=tft-navigation/enable/a; type=boolean; label=Show protected pages
+showAccessProtectedPages = 0
+
+######################## first navigation #########################
+
+# cat=tft-firstnavigation/enable/n; type=int+; label=Entry level of first navigation:By default it shows all pages of the FIRST level (0) in your pagetree.
+navigationOneEntryLevel = 1
+
+# cat=tft-firstnavigation/enable/c; type=int; label=Page ID where the mega menu is located
+megaMenuPid =
+
+# cat=tft-firstnavigation/enable/c; type=int; label=Page ID where the overlay-menu is located
+overlayMenuPid =
+
+# cat=tft-firstnavigation/enable/c; type=options[default,bootstrap,smartmenus,megamenu,onepage,overlay-menu]; label=Type of menu
+menuType = smartmenus
+
+######################## second navigation #########################
+
+# cat=tft-secondnavigation/enable/r; type=int+; label=Entry level of second menu:The submenu is the menu on the left side and by default it shows all pages and subpages of the SECOND level in your pagetree.
+navigationTwoEntryLevel = 2
+
+######################## meta #########################
+# cat=tft-meta/favicon/a; type=resource; label=Favicon:Favicon. Filetype: ico, gif, png
+favicon = EXT:tft/Resources/Public/Images/favicon.png
+# cat=tft-meta/favicon/b; type=resource; label=Apple touch icon: filetype: png
+appleTouchIcon57 = EXT:tft/Resources/Public/Images/apple-touch-icon-57-precomposed.png
+# cat=tft-meta/favicon/c; type=resource; label=Apple touch icon: filetype: png
+appleTouchIcon72 = EXT:tft/Resources/Public/Images/apple-touch-icon-72-precomposed.png
+# cat=tft-meta/favicon/d; type=resource; label=Apple touch icon: filetype: png
+appleTouchIcon114 = EXT:tft/Resources/Public/Images/apple-touch-icon-114-precomposed.png
+# cat=tft-meta/favicon/e; type=resource; label=Apple touch icon: filetype: png
+appleTouchIcon144 = EXT:tft/Resources/Public/Images/apple-touch-icon-144-precomposed.png
+# cat=tft-meta/bodytag/a; type=text; label=CSS class?:CSS class in body tag.
+cssClass =
+# cat=tft-meta/bodytag/b; type=text; label=Aria language CSS class?:CSS class in body tag for the language with the name "aria-language".
+cssClassAria =
+# cat=tft-meta/themecolor/a; type=color; label=Theme color
+themeColor =
+
+
+######################## mobile navigation #########################
+
+navigation {
+  mobile {
+    # cat=tft-mobilenavigation/enable/a; type=int+; label=Entry level of mobile navigation.
+    entryLevel = 2
+
+    # cat=tft-mobilenavigation/enable/b; type=int; label=Replace site root:This is necessary if the home page is also the entry point (globe icon).
+    replaceSiteRootWithPageId = 0
+  }
+}
+
+######################### footer ################################
+
+
+# cat=tft-footer/navigation/b; type=int; label=Footer Menu Folder ID: Id of the folder which contains the pages/shortcuts
+navigationFooterEntryId =
+
+# cat=tft-footer/navigation/c; type=int; label=Footer Content Page ID: Id of the page with the footer content
+contentFooterUid =
+
+######################### language menu ################################
+
+languageMenu {
+
+  # cat=tft-language/language/a; type=boolean; label=Show language menu
+  activated = 0
+
+  # cat=tft-language/language/b; type=boolean; label=Hide current language
+  hideCurrent = 1
+
+  # cat=tft-language/language/c; type=options[Dropdown=Dropdown,Row=Row]; label=Display layout for desktop
+  layout = Dropdown
+
+  # cat=tft-language/language/d; type=options[Flag and label=FlagAndLabel,Flag=Flag,Label=Label]; label=Display flags and labels
+  itemLayout = Label
+}
+
+
+######################### expert settings ################################
+
+# cat=tft-expert-settings/a; type=options[No=0,Yes=1]; label=Enable Admin-Panel?:If set, the admin panel appears in the bottom of pages. NOTE: In addition the panel must be enabled for non-admin users as well, if you want this, using the TSconfig for the non-admin user! See adminguide documentation.
+userAdmPanelOn = 0
+# cat=tft-expert-settings/b; type=options[No=0,Yes=1]; label=Enable indexing at all?:Enables cached pages to be indexed. Must be enabled to get indexed_search to work.
+userIndexingOn = 0
+# cat=tft-expert-settings/c; type=options[No=0,Yes=1]; label=Index external documents?:If set, external media linked to on the pages is indexed as well. Certain software must to be installed on your webserver to use this feature. See indexed_serach documentation.
+userIndexExternalsOn = 0
+# cat=tft-expert-settings/c; type=options[No=0,Yes=1]; label=Index metatags?:If set, all words contained in the metatags will be also be indexed. Should be turned on only in special circumstances.
+userIndexMetaTagsOn = 0
+# cat=tft-expert-settings/d; type=options[all,cached,output]; label=XHTML cleaning:Tries to clean up the output to make it XHTML compliant and a bit more. (all = the content is always processed before it may be stored in cache. cached = only if the page is put into the cache. output = only the output code just before it's echoed out.)
+userXhtmlCleaning =
+
+# cat=tft-expert-settings/f; type=options[No=0,Yes=1]; label=Prefix comments off?:This is for debugging your TypoScript Code. If switched On, HTML comments are added like <!-- Output of lib.header.20 [begin] --> and <!-- Output of lib.header.20 [end] --> to find the output of an element easier in HTML source. The COA-Elements must be prepared to do this. Turn off for production environments!
+userDisablePrefComm = 0
+
+# cat=tft-expert-settings/development/g; type=options[No=0,Yes=1]; label=Live mode:In live mode CSS and JS scripts are combined and compressed.
+liveMode = 0
+
+# cat=tft-expert-settings/development/h; type=options[No=0,Yes=1]; label=AMP Modus aktivieren
+activateAMP = 0
+
+######################### other settings ################################
+# cat=tft-other-settings/a; type=int+; label=Login page id: Used for links to restricted pages
+loginPid = 0
+
+######################### javascripts ################################
+
+# cat=tft-javascripts/javascript/a; type=string; label=jQuery Core: Path to the jquery core file
+jquerycore = EXT:tft/Resources/Public/JavaScript/jquery/jquery-3.6.1.min.js
+
+# cat=tft-javascripts/javascript/c; type=string; label=Bootstrap JavaScript file: Path to the bootstrap javascript file
+jsBootstrap = EXT:tft/Resources/Public/JavaScript/bootstrap/bootstrap.min.js
+
+# cat=tft-javascripts/javascript/d; type=string; label=Modernizr script
+jsModernizr =
+
+
+######################## content styling #########################
+plugin.tx_wst3bootstrap.settings {
+
+  content {
+
+    padding {
+      # cat=tft-content/padding/a; type=options[,extra-small,small,medium,large,extra-large]; label=Padding top
+      top = none
+      # cat=tft-content/padding/a; type=options[,extra-small,small,medium,large,extra-large]; label=Padding bottom
+      bottom = none
+    }
+
+    margin {
+      # cat=tft-content/margin/a; type=options[,extra-small,small,medium,large,extra-large]; label=Margin top
+      top = none
+
+      # cat=tft-content/margin/b; type=options[,extra-small,small,medium,large,extra-large]; label=Margin bottom
+      bottom = medium
+    }
+
+
+  }
+}
+
+######################## Social media bar #########################
+callToAction {
+
+  # cat=tft-calltoaction/general/a; type=boolean; label=Aktiviert
+  activated = 0
+
+  email {
+    # cat=tft-calltoaction/contact/a; type=string; label=ID of the contact page
+    pageId =
+    # cat=tft-calltoaction/contact/b; type=int+; label=Mail button order
+    order = 1
+    # cat=tft-calltoaction/contact/c; type=boolean; label=Using modal window
+    modal = 1
+    # cat=tft-calltoaction/contact/d; type=string; label=Label
+    label = E-Mail
+  }
+
+  custom {
+    1 {
+      # cat=tft-calltoaction/custom/a1; type=int; label=First custom Page ID
+      pageId =
+      # cat=tft-calltoaction/custom/a2; type=string; label=Label of first custom button
+      label = Demo
+      # cat=tft-calltoaction/order/b; type=int+; label=First custom button order
+      order = 2
+      # cat=tft-calltoaction/custom/a3; type=string; label=Class of the first custom button
+      class = t3b-icon-desktop
+    }
+
+    2 {
+      # cat=tft-calltoaction/custom/a2; type=int; label=Second custom Page ID
+      pageId =
+      # cat=tft-calltoaction/custom/a2; type=string; label=Label of second custom button
+      label =
+      # cat=tft-calltoaction/order/c; type=int+; label=Second custom button order
+      order = 2
+    }
+  }
+
+  default {
+
+    facebook {
+      # cat=tft-calltoaction/language-default/a1; type=string; label=Facebook Link
+      link =
+      # cat=tft-calltoaction/order/b; type=int+; label=Facebook button order
+      order = 2
+      # cat=tft-calltoaction/language-default/a2; type=string; label=Facebook label
+      label = Facebook
+    }
+
+    youtube {
+      # cat=tft-calltoaction/language-default/b1; type=string; label=Youtube link
+      link =
+      # cat=tft-calltoaction/order/e; type=int+; label=Youtube button order
+      order = 3
+      # cat=tft-calltoaction/language-default/b2; type=string; label=Youtube label
+      label = Youtube
+    }
+
+    instagram {
+      # cat=tft-calltoaction/language-default/c1; type=string; label=Instagram link
+      link =
+      # cat=tft-calltoaction/order/f; type=int+; label=Instagram button order
+      order = 4
+      # cat=tft-calltoaction/language-default/c2; type=string; label=Instagram label
+      label = Instagram
+    }
+
+    pinterest {
+      # cat=tft-calltoaction/language-default/d1; type=string; label=pinterest link
+      link =
+      # cat=tft-calltoaction/order/g; type=int+; label=pinterest button order
+      order = 5
+      # cat=tft-calltoaction/language-default/d2; type=string; label=Pinterest label
+      label = Pinterest
+    }
+
+    xing {
+      # cat=tft-calltoaction/language-default/e1; type=string; label=Xing link
+      link =
+      # cat=tft-calltoaction/order/g; type=int+; label=Xing button order
+      order = 6
+      # cat=tft-calltoaction/language-default/e2; type=string; label=Xing label
+      label = Xing
+    }
+
+    linkedin {
+      # cat=tft-calltoaction/language-default/f1; type=string; label=LinkedIn link
+      link =
+      # cat=tft-calltoaction/order/g; type=int+; label=LinkedIn button order
+      order = 7
+      # cat=tft-calltoaction/language-default/f2; type=string; label=LinkedIn label
+      label = LinkedIn
+    }
+
+    git {
+      # cat=tft-calltoaction/language-default/g1; type=string; label=Git link
+      link =
+      # cat=tft-calltoaction/order/g; type=int+; label=Git button order
+      order = 8
+      # cat=tft-calltoaction/language-default/g2; type=string; label=Git label
+      label = Github
+    }
+
+    mastodon {
+      # cat=tft-calltoaction/language-default/h1; type=string; label=Mastodon link
+      link =
+      # cat=tft-calltoaction/order/g; type=int+; label=Mastodon button order
+      order = 9
+      # cat=tft-calltoaction/language-default/h2; type=string; label=Mastodon label
+      label = Mastodon
+    }
+  }
+
+  language {
+
+    de {
+      facebook {
+        # cat=tft-calltoaction/language-de/a; type=string; label=Facebook link
+        link =
+      }
+
+      youtube {
+        # cat=tft-calltoaction/language-de/b; type=string; label=Youtube link
+        link =
+      }
+
+      instagram {
+        # cat=tft-calltoaction/language-de/c; type=string; label=Instagram link
+        link =
+      }
+
+      pinterest {
+        # cat=tft-calltoaction/language-de/d; type=string; label=pinterest link
+        link =
+      }
+
+      xing {
+        # cat=tft-calltoaction/language-de/e; type=string; label=Xing link
+        link =
+      }
+
+      linkedin {
+        # cat=tft-calltoaction/language-de/f; type=string; label=LinkedIn link
+        link =
+      }
+
+      mastodon {
+        # cat=tft-calltoaction/language-de/h; type=string; label=Mastodon link
+        link =
+      }
+    }
+
+    fr {
+      facebook {
+        # cat=tft-calltoaction/language-fr/a; type=string; label=Facebook link
+        link =
+      }
+
+      youtube {
+        # cat=tft-calltoaction/language-fr/b; type=string; label=Youtube link
+        link =
+      }
+
+      instagram {
+        # cat=tft-calltoaction/language-fr/c; type=string; label=Instagram link
+        link =
+      }
+
+      pinterest {
+        # cat=tft-calltoaction/language-fr/d; type=string; label=pinterest link
+        link =
+      }
+
+      xing {
+        # cat=tft-calltoaction/language-fr/e; type=string; label=Xing link
+        link =
+      }
+
+      linkedin {
+        # cat=tft-calltoaction/language-fr/f; type=string; label=LinkedIn link
+        link =
+      }
+
+      mastodon {
+        # cat=tft-calltoaction/language-fr/h; type=string; label=Mastodon link
+        link =
+      }
+    }
+
+    nl {
+      facebook {
+        # cat=tft-calltoaction/language-nl/a; type=string; label=Facebook link
+        link =
+      }
+
+      youtube {
+        # cat=tft-calltoaction/language-nl/b; type=string; label=Youtube link
+        link =
+      }
+
+      instagram {
+        # cat=tft-calltoaction/language-nl/c; type=string; label=Instagram link
+        link =
+      }
+
+      pinterest {
+        # cat=tft-calltoaction/language-nl/d; type=string; label=pinterest link
+        link =
+      }
+
+      xing {
+        # cat=tft-calltoaction/language-nl/e; type=string; label=Xing link
+        link =
+      }
+
+      linkedin {
+        # cat=tft-calltoaction/language-nl/f; type=string; label=LinkedIn link
+        link =
+      }
+
+      mastodon {
+        # cat=tft-calltoaction/language-nl/h; type=string; label=Mastodon link
+        link =
+      }
+    }
+  }
+}
+
+
+######################## Accessible Rich Internet Applications (ARIA) #########################
+aria {
+
+  # cat=tft-aria/general/a; type=boolean; label=Activate the ARIA bar
+  activated = 0
+
+
+  contrast {
+    # cat=tft-aria/contrast/a; type=boolean; label=Activate the contrast button
+    activated = 0
+  }
+
+  easy-language {
+
+    # cat=tft-aria/easy-language/a; type=options[None=none,Page=page,Language=language]; label=Easy language button: Link to special page or language
+    linkType = none
+
+    # cat=tft-aria/easy-language/b; type=int; label=Language ID of the easy language:Is used if linkType is link to language and to filter the common language navigation
+    languageId = 0
+
+    # cat=tft-aria/easy-language/c; type=int; label=Page id of easy language page
+    pageId = 0
+
+  }
+
+  help {
+    # cat=tft-aria/help/a; type=int; label=Page id of help page
+    pageId = 0
+  }
+
+}
+
+# cat=tft-design/a; type=options[Komplette Breite=full,Boxed=boxed]; label=Layout
+layout = full
+
+
+######################## Icons #########################
+
+icons {
+
+  uploads {
+    # cat=tft-icons/uploads/a; type=string; label=Icon set prefix for upload lists
+    prefix = t3b-icon-file-
+  }
+
+}

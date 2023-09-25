@@ -1,0 +1,25 @@
+@import "../bootstrap/alert";
+
+.alert {
+
+  p {
+    margin-bottom: 0;
+  }
+
+  & > div:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+.alert-welcome {
+  @extend .alert-info;
+}
+
+.alert-error {
+  @extend .alert-danger;
+}
+
+.alert-logout {
+  @extend .alert-info;
+}

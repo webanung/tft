@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 130 130" width="130" height="130">
+  <defs>
+    <clipPath id="_clipPath_DVZPezCVk41ha4L9bzQ0Dqnwhp0UYu7X">
+      <rect width="130" height="130"></rect>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#_clipPath_DVZPezCVk41ha4L9bzQ0Dqnwhp0UYu7X)">
+    <defs>
+      <clipPath id="_clipPath_qgXQQEEunVd75mEzj46nBp7bIepfrvIj">
+        <rect width="130" height="130"></rect>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#_clipPath_qgXQQEEunVd75mEzj46nBp7bIepfrvIj)">
+      <defs>
+        <filter id="UWlX4gRsTFE3zvkRbA1qTlePSEcMhH5e" x="-200%" y="-200%" width="400%" height="400%">
+          <feOffset xmlns="http://www.w3.org/2000/svg" in="SourceAlpha" result="offOut" dx="2" dy="2"></feOffset>
+          <feGaussianBlur xmlns="http://www.w3.org/2000/svg" in="offOut" result="blurOut" stdDeviation="1"></feGaussianBlur>
+          <feComponentTransfer xmlns="http://www.w3.org/2000/svg" in="blurOut" result="opacOut">
+            <feFuncA xmlns="http://www.w3.org/2000/svg" type="table"></feFuncA>
+          </feComponentTransfer>
+          <feBlend xmlns="http://www.w3.org/2000/svg" in="SourceGraphic" in2="opacOut" mode="normal"></feBlend>
+        </filter>
+      </defs>
+      <g filter="url(#UWlX4gRsTFE3zvkRbA1qTlePSEcMhH5e)">
+        <path d="M 0 0 L 126 0 C 126 0 126 0 126 0 L 126 126 L 126 126 L 0 126 L 0 126 L 0 0 C 0 0 0 0 0 0 Z" style="stroke:none;fill:#EBEBEB;stroke-miterlimit:10;"></path>
+      </g>
+      <rect x="0" y="0" width="126" height="12" transform="matrix(1,0,0,1,0,0)" fill="rgb(152,153,155)"></rect>
+      <path d=" M 3 6 C 3 4.344 4.344 3 6 3 C 7.656 3 9 4.344 9 6 C 9 7.656 7.656 9 6 9 C 4.344 9 3 7.656 3 6 Z " fill="rgb(235,235,235)" fill-opacity="0.7"></path>
+      <path d=" M 12 6 C 12 4.344 13.344 3 15 3 C 16.656 3 18 4.344 18 6 C 18 7.656 16.656 9 15 9 C 13.344 9 12 7.656 12 6 Z " fill="rgb(235,235,235)" fill-opacity="0.7"></path>
+      <rect x="15" y="18" width="96" height="15" transform="matrix(1,0,0,1,0,0)" fill="rgb(205,215,217)"></rect>
+      <g transform="matrix(0.245,0,0,0.245,18,18)">
+        <text transform="matrix(1,0,0,1,141.001,44.566)" style="font-family:&quot;Open Sans&quot;;font-weight:400;font-size:36px;font-style:normal;fill:#8a8a8a;stroke:none;">Hero</text>
+      </g>
+    </g>
+    <path d="M 42 39 L 111 39 C 111 39 111 39 111 39 L 111 120 C 111 120 111 120 111 120 L 42 120 C 42 120 42 120 42 120 L 42 39 C 42 39 42 39 42 39 Z" style="stroke:none;fill:#FFA080;stroke-miterlimit:10;"></path>
+    <rect x="15" y="39" width="21" height="81" transform="matrix(1,0,0,1,0,0)" fill="rgb(180,188,190)"></rect>
+  </g>
+</svg>

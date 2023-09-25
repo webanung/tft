@@ -1,0 +1,62 @@
+
+.layout-Onepager {
+  #page {
+    padding-top: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    #page {
+      padding-top: 0;
+    }
+  }
+
+  main {
+    padding-top: 0;
+  }
+}
+
+
+.page404 {
+  .breadcrumb-section {
+    display: none;
+  }
+
+  .hero {
+
+    color: #fff;
+    text-align: center;
+
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px #000;
+    }
+
+    h2 {
+      font-size: 12rem;
+      padding-bottom: 2rem;
+      text-shadow: 2px 2px #000;
+    }
+
+
+  }
+
+}
+
+main {
+  padding-top: 3rem;
+}
+
+/* Debugger Fenster nach vorne bringen */
+.extbase-debugger {
+  position: relative;
+  z-index: 9999;
+}
+
+.mm-navbar .nav-link {
+  padding: 0.2rem 1rem;
+}
+
+body.cke_editable {
+  padding: 0.3rem;
+}

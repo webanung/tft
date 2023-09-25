@@ -1,0 +1,118 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      xmlns:wsscss="http://typo3.org/ns/WapplerSystems/WsScss/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="General"/>
+
+
+<f:section name="content">
+    <!--TYPO3SEARCH_end-->
+    <f:if condition="{news}">
+        <f:then>
+
+            <f:switch expression="{settings.templateLayout}">
+                <f:case value="TimelineCardsAlternately">
+
+                    <wsscss:asset.scss identifier="card" href="EXT:tft/Resources/Private/SCSS/components/card.scss" />
+                    <wsscss:asset.scss identifier="timeline" href="EXT:tft/Resources/Private/SCSS/components/timeline.scss" />
+
+                    <f:if condition="{settings.hidePagination}">
+                        <f:then>
+                            <div class="row timeline-style-cards_alternately" id="news-container-{contentObjectData.uid}">
+                                <f:for each="{news}" as="newsItem" iteration="iterator">
+                                    <f:render partial="List/Item" section="TimelineCardsAlternately" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                </f:for>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{settings.list.paginate.insertAbove}">
+                                <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}"/>
+                            </f:if>
+                            <div class="row timeline-style-cards_alternately">
+                                <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                    <f:render partial="List/Item" section="TimelineCardsAlternately" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                </f:for>
+                            </div>
+                            <f:if condition="{settings.list.paginate.insertBelow}">
+                                <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}"/>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+
+                </f:case>
+                <f:case value="TimelineCardsStraight">
+
+                    <f:if condition="{settings.hidePagination}">
+                        <f:then>
+                            <ul class="row timeline-style-cards_straight list-unstyled">
+                                <f:for each="{news}" as="newsItem" iteration="iterator">
+                                    <f:render partial="List/Item" section="TimelineCardsStraight" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                </f:for>
+                            </ul>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{settings.list.paginate.insertAbove}">
+                                <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}"/>
+                            </f:if>
+                            <ul class="row timeline-style-cards_straight list-unstyled">
+                                <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                    <f:render partial="List/Item" section="TimelineCardsStraight" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                </f:for>
+                            </ul>
+                            <f:if condition="{settings.list.paginate.insertBelow}">
+                                <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}"/>
+                            </f:if>
+                        </f:else>
+                    </f:if>
+
+                </f:case>
+                <f:defaultCase>
+
+                    <div class="news-list-view">
+                        <f:render section="Records" arguments="{_all}"/>
+                    </div>
+
+                </f:defaultCase>
+            </f:switch>
+
+        </f:then>
+        <f:else>
+            <div class="alert ">
+                <f:translate key="list_nonewsfound"/>
+            </div>
+        </f:else>
+    </f:if>
+
+    <f:if condition="{settings.listPid}">
+        <f:link.page pageUid="{settings.listPid}" class="text-right">
+            <f:translate key="LLL:EXT:tft/Resources/Private/Language/locallang.xlf:news.show_all_news"/>
+        </f:link.page>
+    </f:if>
+
+    <!--TYPO3SEARCH_begin-->
+</f:section>
+
+
+<f:section name="Records">
+
+    <f:if condition="{settings.hidePagination}">
+        <f:then>
+            <f:for each="{news}" as="newsItem" iteration="iterator">
+                <f:render partial="List/Item" section="{f:if(condition:settings.templateLayout,then:settings.templateLayout,else:'List')}" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+            </f:for>
+        </f:then>
+        <f:else>
+            <f:if condition="{settings.list.paginate.insertAbove}">
+                <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}"/>
+            </f:if>
+            <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                <f:render partial="List/Item" section="{f:if(condition:settings.templateLayout,then:settings.templateLayout,else:'List')}" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+            </f:for>
+            <f:if condition="{settings.list.paginate.insertBelow}">
+                <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}"/>
+            </f:if>
+        </f:else>
+    </f:if>
+
+</f:section>
+</html>

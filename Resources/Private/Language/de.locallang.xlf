@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+
+		<body>
+
+			<trans-unit id="tt_content.cols">
+				<target>Breite gemessen an Grid-Spaltenanzahl pro Bildspalte</target>
+			</trans-unit>
+
+
+			<trans-unit id="copyright">
+				<target>t3Bootstrap Template von</target>
+			</trans-unit>
+
+			<trans-unit id="searchPhrase">
+				<target>Suchbegriff</target>
+			</trans-unit>
+			<trans-unit id="search">
+				<target>Suchen</target>
+			</trans-unit>
+			<trans-unit id="toSearchPage">
+				<source>To search page</source>
+				<target>Zur Suchseite</target>
+			</trans-unit>
+			<trans-unit id="aria.openPageInLanguage">
+				<source>Opens the link in language %s.</source>
+				<target>Öffnet den Link in der Sprache %s</target>
+			</trans-unit>
+
+
+			<trans-unit id="link.more">
+				<target>Weiterlesen</target>
+			</trans-unit>
+
+			<!-- Link titles -->
+			<trans-unit id="more_link_titleText">
+				<target>Weiterlesen</target>
+			</trans-unit>
+			<trans-unit id="more_link_altText">
+				<target>Weiterlesen</target>
+			</trans-unit>
+			<trans-unit id="next_link_titleText">
+				<target>Weiterlesen</target>
+			</trans-unit>
+			<trans-unit id="next_link_altText">
+				<target>Weiterlesen</target>
+			</trans-unit>
+
+
+			<trans-unit id="news.show_all_news">
+				<source>Show all news</source>
+				<target>Alle Meldungen anzeigen</target>
+			</trans-unit>
+
+
+			<trans-unit id="email.title">
+				<target>Schreiben Sie uns!</target>
+			</trans-unit>
+
+			<!-- aria -->
+			<trans-unit id="jump_to_main_navigation">
+				<target>Direkt zur Hauptnavigation springen</target>
+			</trans-unit>
+			<trans-unit id="jump_to_content">
+				<target>Direkt zum Inhalt springen</target>
+			</trans-unit>
+			<trans-unit id="jump_to_sub_navigation">
+				<target>Zur Unternavigation springen</target>
+			</trans-unit>
+			<trans-unit id="jump_to_meta_navigation">
+				<target>Zur Meta-Navigation springen</target>
+			</trans-unit>
+			<trans-unit id="jump_to_language_navigation">
+				<target>Zur Sprachnavigation springen</target>
+			</trans-unit>
+
+
+			<trans-unit id="sub_navigation">
+				<target>Unternavigation</target>
+			</trans-unit>
+
+
+			<trans-unit id="aria.contrast">
+				<target>Kontrast</target>
+			</trans-unit>
+			<trans-unit id="aria.easy-language">
+				<target>Leichte Sprache</target>
+			</trans-unit>
+			<trans-unit id="aria.help">
+				<target>Hilfe</target>
+			</trans-unit>
+			<trans-unit id="aria.nav_pagination">
+				<target>Die Ergebnisseiten durchblättern</target>
+			</trans-unit>
+
+
+			<trans-unit id="dateFormat">
+				<target>%d.%m.%Y</target>
+			</trans-unit>
+
+			<trans-unit id="openSearchbar">
+				<source>Open search bar</source>
+				<target>Suchleiste öffnen</target>
+			</trans-unit>
+			<trans-unit id="openNavigation">
+				<source>Open navigation</source>
+				<source>Öffne Navigation</source>
+			</trans-unit>
+
+			<trans-unit id="cookieman.suppressionWarning">
+				<source>The cookie window is suppressed by a browser extension. Please unblock the website.</source>
+				<target>Das Cookie-Fenster wird durch eine Browser-Erweiterung unterdrückt. Bitte geben Sie die Website frei.</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

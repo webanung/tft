@@ -1,0 +1,9 @@
+
+
+body.with-aria-bar footer > div {
+  padding-bottom: 3.5rem;
+  @include media-breakpoint-down(xs) {
+    padding-bottom: 8.5rem;
+  }
+}
+

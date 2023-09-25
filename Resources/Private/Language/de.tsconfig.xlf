@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages">
+		<header/>
+		<body>
+
+			<trans-unit id="bg_color_class.bg-dark-gray">
+				<target>Template: dark gray</target>
+			</trans-unit>
+			<trans-unit id="bg_color_class.bg-gray1">
+				<target>Template: gray1</target>
+			</trans-unit>
+			<trans-unit id="bg_color_class.bg-gray2">
+				<target>Template: gray2</target>
+			</trans-unit>
+			<trans-unit id="bg_color_class.bg-light-gray">
+				<target>Template: light gray</target>
+			</trans-unit>
+
+			<!-- Backend Layouts -->
+			<trans-unit id="be_layout.one_column">
+				<target>Einspaltig</target>
+			</trans-unit>
+			<trans-unit id="be_layout.two_columns">
+				<target>Zweispaltig</target>
+			</trans-unit>
+			<trans-unit id="be_layout.two_columns_department">
+				<target>Zweispaltig Department</target>
+			</trans-unit>
+			<trans-unit id="be_layout.three_columns">
+				<target>Dreispaltig</target>
+			</trans-unit>
+			<trans-unit id="be_layout.full_width">
+				<target>Volle Breite (veraltet)</target>
+			</trans-unit>
+			<trans-unit id="be_layout.one_pager">
+				<target>Onepager</target>
+			</trans-unit>
+
+			<trans-unit id="be_layout.main_content">
+				<target>Hauptinhalt</target>
+			</trans-unit>
+			<trans-unit id="be_layout.menu_column">
+				<target>Menüspalte</target>
+			</trans-unit>
+			<trans-unit id="be_layout.sidebar">
+				<target>Seitenspalte</target>
+			</trans-unit>
+			<trans-unit id="be_layout.side_content">
+				<target>Seitliche Inhalte</target>
+			</trans-unit>
+			<trans-unit id="be_layout.inheriting_side_content">
+				<target>Vererbende seitliche Inhalte</target>
+			</trans-unit>
+
+
+			<!-- Icons -->
+			<trans-unit id="icon_size.sm">
+				<source>Small</source>
+				<target>Klein</target>
+			</trans-unit>
+			<trans-unit id="icon_size.md">
+				<source>Medium</source>
+				<target>Mittel</target>
+			</trans-unit>
+			<trans-unit id="icon_size.lg">
+				<source>Large</source>
+				<target>Groß</target>
+			</trans-unit>
+			<trans-unit id="icon_size.xl">
+				<source>Extra large</source>
+				<target>Extra groß</target>
+			</trans-unit>
+
+
+			<trans-unit id="icon_color.primary">
+				<source>Primary color</source>
+				<target>Primärfarbe</target>
+			</trans-unit>
+			<trans-unit id="icon_color.secondary">
+				<source>Secondary color</source>
+				<target>Sekundärfarbe</target>
+			</trans-unit>
+
+
+			<trans-unit id="icon_style.bg-circle">
+				<source>Circular background</source>
+				<target>Kreis Hintergrund</target>
+			</trans-unit>
+			<trans-unit id="icon_style.border-circle">
+				<source>Bordered with circle</source>
+				<target>Mit Kreis umranded</target>
+			</trans-unit>
+			<trans-unit id="icon_style.bg-square">
+				<source>Square background</source>
+				<target>Quadratischer Hintergrund</target>
+			</trans-unit>
+			<trans-unit id="icon_style.border-square">
+				<source>Square bordered</source>
+				<target>Quadratisch umranded</target>
+			</trans-unit>
+			<trans-unit id="icon_style.bg-border-circle">
+				<source>Circular background with border</source>
+				<target>Kreisrunder Hintergrund mit Rand</target>
+			</trans-unit>
+
+
+			<trans-unit id="layout.with_preview">
+				<source>With preview image</source>
+				<target>Mit Vorschaubild</target>
+			</trans-unit>
+			<trans-unit id="layout.show_selected_pages">
+				<source>Show selected pages</source>
+				<target>Ausgewählte Seiten anzeigen</target>
+			</trans-unit>
+
+
+			<trans-unit id="news.templateLayouts.list">
+				<source>List</source>
+				<target>Liste</target>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.latest">
+				<source>Latest</source>
+				<target>Neuste</target>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.backgroundImageLatest">
+				<source>Newest: image background, upright</source>
+				<target>Neuste: Bild-Hintergrund, hochkant</target>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.rightImageLatest">
+				<source>Newest: Square image right</source>
+				<target>Neuste: Quadratisches Bild rechts</target>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.slimImageLatest">
+				<source>Latest: Narrow preview image</source>
+				<target>Neuste: Schmales Vorschau-Bild</target>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.timelineCardsAlternately">
+				<source>Timeline: Alternate Cards</source>
+				<target>Zeitleiste: Abwechselnde Cards</target>
+			</trans-unit>
+			<trans-unit id="news.templateLayouts.timelineCardsStraight">
+				<source>Timeline: Straight cards</source>
+				<target>Zeitleiste: Gerade Karten</target>
+			</trans-unit>
+
+
+			<trans-unit id="cropVariants.vertical">
+				<source>Vertical</source>
+				<target>Hochkant</target>
+			</trans-unit>
+			<trans-unit id="cropVariants.standard">
+				<source>Standard</source>
+				<target>Standard</target>
+			</trans-unit>
+			<trans-unit id="cropVariants.square">
+				<source>Square</source>
+				<target>Quadratisch</target>
+			</trans-unit>
+			<trans-unit id="cropVariants.slim">
+				<source>Slim</source>
+				<target>Schmal</target>
+			</trans-unit>
+			<trans-unit id="cropVariants.square">
+				<source>Square</source>
+				<target>Quadratisch</target>
+			</trans-unit>
+
+
+			<trans-unit id="frame_class.news-block">
+				<source>News block</source>
+				<target>News-Block</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

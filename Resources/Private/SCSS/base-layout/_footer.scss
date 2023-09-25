@@ -1,0 +1,25 @@
+
+footer {
+  position: relative;
+}
+
+#footer {
+
+  & > .container {
+    padding-top: 2rem;
+  }
+
+  h4 {
+    color: #484848;
+    font-size: 1.2rem;
+  }
+
+  .frame-type-menu_subpages a {
+    line-height: 1.6rem;
+    padding: 0;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}

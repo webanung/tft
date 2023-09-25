@@ -1,0 +1,19 @@
+plugin.tx_dpnglossary {
+
+  settings {
+    termWraps {
+
+      acronym >
+      acronym = TEXT
+      acronym {
+        field = name
+        dataWrap = <acronym title="{field:tooltiptext}" lang="{field:term_lang}">|</acronym>
+        dataWrap {
+          override = <acronym title="{field:name}" lang="{field:term_lang}">|</acronym>
+          override.if.isFalse.data = field:tooltiptext
+        }
+      }
+
+    }
+  }
+}

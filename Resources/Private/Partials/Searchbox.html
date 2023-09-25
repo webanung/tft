@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+
+<f:section name="Default">
+
+    <div itemscope itemtype="http://schema.org/WebSite">
+        <meta itemprop="url" content="{siteConfig.base}"/>
+
+        <form itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction"
+              action="{f:uri.page(pageUid:settings.searchPagePID, additionalParams:'{ tx_indexedsearch_pi2 : { action: \'search\', controller: \'Search\' }}')}"
+              method="post" name="searchform-{formname}" role="search" class="form-search">
+
+
+            <div class="input-group">
+
+                <meta itemprop="target"
+                      content="{f:uri.page(noCache:1,absolute:false,pageUid:settings.searchPagePID, additionalParams:'{ tx_indexedsearch_pi2: { action: \'search\', controller: \'Search\'}}')}{settings.searchTerm}"/>
+                <input itemprop="query-input" aria-label="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xlf:searchPhrase')}" aria-hidden="true" name="search_term_string" type="text" style="display: none;"/>
+
+                <input class="form-control" aria-label="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xlf:searchPhrase')}"
+                       placeholder="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xlf:searchPhrase')}"
+                       id="tx_indexedsearch_word-{formname}" name="tx_indexedsearch_pi2[search][sword]" type="text"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-search " type="submit" aria-label="{f:translate(key:'LLL:EXT:tft/Resources/Private/Language/locallang.xml:search')}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                    </button>
+                </span>
+            </div>
+
+        </form>
+
+    </div>
+
+
+</f:section>
+
+</html>

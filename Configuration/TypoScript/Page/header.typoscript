@@ -1,0 +1,80 @@
+###################################################
+# Page header / meta
+###################################################
+
+# Favicon
+["{$favicon}" != ""]
+  page.shortcutIcon = {$favicon}
+[END]
+
+# Apple Touch Icons
+page.headerData.870 = IMG_RESOURCE
+page.headerData.870.file = {$appleTouchIcon57}
+page.headerData.870.stdWrap {
+  wrap = <link href="|" rel="apple-touch-icon apple-touch-icon-precomposed" />
+  required = 1
+}
+
+page.headerData.871 = IMG_RESOURCE
+page.headerData.871.file = {$appleTouchIcon72}
+page.headerData.871.stdWrap {
+  wrap = <link href="|" rel="apple-touch-icon apple-touch-icon-precomposed" sizes="72x72" />
+  required = 1
+}
+
+page.headerData.872 = IMG_RESOURCE
+page.headerData.872.file = {$appleTouchIcon114}
+page.headerData.872.stdWrap {
+  wrap = <link href="|" rel="apple-touch-icon apple-touch-icon-precomposed" sizes="114x114" />
+  required = 1
+}
+
+page.headerData.873 = IMG_RESOURCE
+page.headerData.873.file = {$appleTouchIcon144}
+page.headerData.873.stdWrap {
+  wrap = <link href="|" rel="apple-touch-icon apple-touch-icon-precomposed" sizes="144x144" />
+  required = 1
+}
+
+
+page.meta {
+  description {
+    data = page:description
+  }
+
+  author {
+    data = page:author
+  }
+
+  # these viewport settings are important for mmenu
+  viewport {
+    value = width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no
+  }
+
+  navtitle {
+    data = page:nav_title//page:title
+  }
+
+  sitename {
+    data = site:websiteTitle
+  }
+
+}
+["{$themeColor}" != ""]
+  page.meta.theme-color = {$themeColor}
+[END]
+
+
+[{$activateAMP} == 1]
+  page.headerData.932 = TEXT
+  page.headerData.932 {
+    typolink.parameter.data = TSFE:id
+    typolink.returnLast = url
+    typolink.forceAbsoluteUrl = 1
+    typolink.addQueryString = 1
+    typolink.addQueryString.method = GET
+    typolink.addQueryString.exclude = cHash,backPid
+    typolink.additionalParams = &type=786575
+    wrap = <link rel="amphtml" href="|" />
+  }
+[END]

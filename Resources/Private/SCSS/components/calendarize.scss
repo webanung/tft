@@ -1,0 +1,95 @@
+
+@import "init";
+
+.calendarize {
+
+  .calendar__border {
+    border: 1px solid #e0e0e0;
+  }
+
+  .calendar__month-head {
+    padding: 0.5rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .calendar__day-grid {
+    margin: 0;
+    overflow: hidden;
+
+  }
+
+  .calendar__day-cell {
+    font-size: 0.8rem;
+    line-height: 2rem;
+    border-right: #e0e0e0 1px solid;
+    padding-left: 8px;
+    color: #757575;
+
+
+    .list-group {
+      margin-left: -8px;
+      margin-bottom: 0.5rem;
+    }
+    .list-group-item {
+      padding: 0.25rem 0.4rem;
+      line-height: 1.3rem;
+    }
+  }
+
+  .calendar__day-row {
+    position: relative;
+    overflow: hidden;
+    border-bottom: #e0e0e0 1px solid;
+
+    & > div:last-child {
+      border-bottom-width: 0;
+    }
+  }
+
+  .not-current-month {
+    background: #f7f7f7;
+  }
+
+  .selectedDay > span {
+    margin-top: 4px;
+    margin-left: -2px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    background-color: #4285f4;
+    border-radius: 50%;
+    display: block;
+  }
+
+
+  @include media-breakpoint-up(md) {
+
+    .calendar__day-grid {
+      flex: 1 1 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .calendar__day-cell {
+      flex: 1 1 0;
+    }
+
+    .calendar__day-row {
+      display: flex;
+      flex: 1 1 auto;
+    }
+
+  }
+
+  @include media-breakpoint-down(sm) {
+    .not-current-month {
+      display: none;
+    }
+    .calendar__day-cell {
+      border-bottom: #eee 1px solid;
+    }
+  }
+
+}

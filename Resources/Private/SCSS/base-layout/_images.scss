@@ -1,0 +1,45 @@
+@import "../bootstrap/images";
+
+.figure-caption {
+  margin-top: 0.2em;
+}
+
+figcaption {
+  margin-top: 0.1rem;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.img-fullwidth {
+  width: 100%;
+}
+
+.ce-media, figure {
+  margin-bottom: 1rem;
+}
+
+
+figure.image > div > a {
+  width: 100%;
+  display: flex;
+}
+
+figure.image picture {
+  height: auto;
+}
+
+.imagelink-placeholder {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  &:before {
+    display: none !important;
+  }
+}

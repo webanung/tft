@@ -1,0 +1,39 @@
+###################################################
+# Menu
+###################################################
+
+lib.menu {
+  homePageUID = {$homePageUID}
+  showAccessProtectedPages = {$showAccessProtectedPages}
+
+  main {
+    entryLevel = {$navigationOneEntryLevel}
+    menuType = {$menuType}
+    megaMenuPid = {$megaMenuPid}
+    overlayMenuPid = {$overlayMenuPid}
+  }
+
+  sub {
+    entryLevel = {$navigationTwoEntryLevel}
+  }
+
+  user {
+    pageUid = {$navigationUserEntryId}
+  }
+
+  footer {
+    pageUid = {$navigationFooterEntryId}
+  }
+
+  language {
+    activated = {$languageMenu.activated}
+    hideCurrent = {$languageMenu.hideCurrent}
+    layout = {$languageMenu.layout}
+    itemLayout = {$languageMenu.itemLayout}
+  }
+
+  mobile {
+    entryLevel = {$navigation.mobile.entryLevel}
+    replaceSiteRootWithPageId = {$navigation.mobile.replaceSiteRootWithPageId}
+  }
+}

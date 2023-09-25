@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:section name="Default">
+
+    <f:if condition="{settings.menu.user.pageUid}">
+
+        <v:menu class="" showAccessProtected="{settings.menu.showAccessProtectedPages}" pageUid="{settings.menu.user.pageUid}" showHiddenInMenu="true">
+            <f:if condition="{menu}">
+                <ul class="user-links nav">
+                    <f:for each="{menu}" as="menuPage" iteration="iteration">
+                        <li class="nav-item">
+                            <a href="{menuPage.link}" rel="{f:if(condition:'{menuPage.target} == \'_blank\'',then:'noopener')}" class="nav-link {menuPage.class}" target="{f:if(condition:menuPage.target,then:menuPage.target,else:'_self')}">{f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}</a>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:if>
+        </v:menu>
+
+    </f:if>
+
+</f:section>
+
+
+<f:section name="Mobile">
+
+    <f:if condition="{settings.menu.user.pageUid}">
+
+        <v:menu class="" pageUid="{settings.menu.user.pageUid}" showHiddenInMenu="true">
+            <f:if condition="{menu}">
+                <ul class="user-links nav mb-2">
+                    <f:for each="{menu}" as="menuPage" iteration="iteration">
+                        <li class="nav-item">
+                            <a href="{menuPage.link}" class="nav-link {menuPage.class}">{f:if(condition: menuPage.nav_title, then: menuPage.nav_title, else: menuPage.title)}</a>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:if>
+        </v:menu>
+
+    </f:if>
+
+</f:section>
+
+</html>

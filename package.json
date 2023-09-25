@@ -1,0 +1,16 @@
+{
+	"name": "tft",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"fantasticon": "fantasticon Resources/Public/Icons/T3Bootstrap -o Resources/Public/Fonts/T3Bootstrap -p t3b-icon -n t3bootstrap",
+		"scss": "node Resources/Private/Build/fantasticon2scss/index.js Resources/Public/Fonts/T3Bootstrap/t3bootstrap.css Resources/Private/SCSS/fonts/t3bootstrap/_icons.scss Resources/Private/SCSS/fonts/t3bootstrap/_classes.scss",
+		"icons": "npm run fantasticon && npm run scss"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"fantasticon": "^1.0.0"
+	}
+}

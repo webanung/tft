@@ -1,0 +1,32 @@
+<html data-namespace-typo3-fluid="true"
+	  xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:ws="http://typo3.org/ns/WapplerSystems/WsT3bootstrap/ViewHelpers" lang="en">
+<f:if condition="{media}">
+	<ws:column sm="8" md="4">
+		<f:for each="{media}" as="mediaElement">
+
+			<figure class="image">
+
+				<f:if condition="{mediaElement.originalResource.type} == 2">
+					<f:render partial="Detail/MediaImage" arguments="{mediaElement: mediaElement, settings:settings}"/>
+				</f:if>
+				<f:if condition="{mediaElement.originalResource.type} == 3">
+					<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement, settings:settings}"/>
+				</f:if>
+				<f:if condition="{mediaElement.originalResource.type} == 4">
+					<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement, settings:settings}"/>
+				</f:if>
+				<f:if condition="{mediaElement.originalResource.type} == 5">
+					<f:render partial="Detail/MediaImage" arguments="{mediaElement: mediaElement, settings:settings}"/>
+				</f:if>
+
+				<f:if condition="{mediaElement.originalResource.properties.copyright}">
+					<figcaption class="image-caption">
+						<span class="copyright">&copy; {mediaElement.originalResource.properties.copyright}</span>
+					</figcaption>
+				</f:if>
+			</figure>
+		</f:for>
+	</ws:column>
+</f:if>
+</html>

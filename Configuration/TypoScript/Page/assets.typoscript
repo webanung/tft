@@ -1,0 +1,89 @@
+["{$jsBootstrap}" != ""]
+  page.includeJSFooter {
+    # for Bootstrap tooltips
+    popper = EXT:tft/Resources/Public/JavaScript/bootstrap/popper.min.js
+
+    bootstrap = {$jsBootstrap}
+  }
+[END]
+
+["{$jsModernizr}" != ""]
+  page.includeJS {
+    modernizr = {$jsModernizr}
+  }
+[END]
+
+["{$jquerycore}" != ""]
+  page.includeJSFooterlibs {
+    jquery = {$jquerycore}
+    jquery.forceOnTop = 1
+  }
+[END]
+
+## other javascripts
+page.includeJSFooter {
+
+  smartmenus_jquery = EXT:tft/Resources/Public/JavaScript/smartmenus/jquery.smartmenus.min.js
+  smartmenus_bootstrap = EXT:tft/Resources/Public/JavaScript/smartmenus/jquery.smartmenus.bootstrap.min.js
+
+  mmenu = EXT:tft/Resources/Public/JavaScript/mmenu/mmenu.js
+  mmenu.excludeFromConcatenation = 1
+
+  matchheight = EXT:tft/Resources/Public/JavaScript/jquery/jquery.matchHeight.min.js
+
+  scrolltotop = EXT:tft/Resources/Public/JavaScript/jquery/scrolltotop.min.js
+
+  inter-element-anchors = EXT:tft/Resources/Public/JavaScript/improvements/inter-element-anchors.min.js
+
+  prevent-link = EXT:tft/Resources/Public/JavaScript/improvements/prevent-link.min.js
+
+  main = EXT:tft/Resources/Public/JavaScript/main.js
+}
+
+# CSS/SASS Dateien
+
+page.includeCSS {
+  # Die Haupt-SCSS Datei, von der alle anderen SCSS Dateien geladen werden
+  main = EXT:tft/Resources/Private/SCSS/base-layout.scss
+  main.inlineOutput = false
+  main.sourceMap = true
+  # copy for rte
+  main.outputfile = typo3temp/assets/css/tft/main.css
+
+  fonts = EXT:tft/Resources/Private/SCSS/fonts.scss
+  fonts.outputfile = typo3temp/assets/css/tft/fonts.css
+  fonts.excludeFromConcatenation = 1
+
+  # Das Smartmenus
+  smartmenus = EXT:tft/Resources/Public/CSS/smartmenus/jquery.smartmenus.bootstrap.css
+
+  mmenu = EXT:tft/Resources/Public/CSS/mmenu/mmenu.css
+  mmenu.inline = 1
+}
+
+#page.preloads {
+#  open-sans-v34-latin-300 = EXT:tft/Resources/Public/Fonts/OpenSans/open-sans-v34-latin-300.woff2
+#  open-sans-v34-latin-300.as = font
+#  open-sans-v34-latin-300.type = font/woff2
+#  open-sans-v34-latin-300.crossorigin = anonymous
+#  open-sans-v34-latin-regular = EXT:tft/Resources/Public/Fonts/OpenSans/open-sans-v34-latin-regular.woff2
+#  open-sans-v34-latin-regular.as = font
+#  open-sans-v34-latin-regular.type = font/woff2
+#  open-sans-v34-latin-regular.crossorigin = anonymous
+#  t3bootstrap = EXT:tft/Resources/Public/Fonts/T3Bootstrap/t3bootstrap.woff2
+#  t3bootstrap.as = font
+#  t3bootstrap.type = font/woff2
+#  t3bootstrap.crossorigin = anonymous
+#}
+
+[{$liveMode} == 1]
+  page.includeCSS {
+    main.sourceMap = false
+    main.inlineOutput = true
+  }
+[end]
+
+page.includeJS {
+  mail = EXT:tft/Resources/Public/JavaScript/mail.js
+}
+

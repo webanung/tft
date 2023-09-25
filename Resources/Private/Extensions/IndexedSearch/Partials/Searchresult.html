@@ -1,0 +1,16 @@
+<div class="tx-indexedsearch-res">
+    <hr/>
+    <h5><span class="tx-indexedsearch-title">{row.title -> f:format.raw()}</span></h5>
+
+
+    <p class="tx-indexedsearch-description">{row.description -> f:format.raw()}...</p>
+
+
+    <f:if condition="{row.subresults}">
+        <p class="tx-indexedsearch-list">
+            <f:for each="{row.subresults.items}" as="subrow">
+                <f:render partial="Searchresult" arguments="{row: subrow}"/>
+            </f:for>
+        </p>
+    </f:if>
+</div>

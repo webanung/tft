@@ -1,0 +1,69 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:ws="http://typo3.org/ns/WapplerSystems/WsT3bootstrap/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+    <f:section name="main">
+        <f:if condition="{imageItems}">
+
+
+            <f:comment>
+            {v:resource.record(uid:settings.fileCollection,table:'sys_file_collection',field:'title') -> v:variable.set(name: 'collection')}
+
+            <h1>{collection.0}</h1>
+            </f:comment>
+
+
+                <f:if condition="{showBackToGallerySelectionLink}">
+                    <f:link.action action="nested"><f:translate key="back_to_gallery_selection" /></f:link.action>
+                </f:if>
+                <div class="row">
+                    <f:for each="{imageItems}" as="object" iteration="iterator">
+                        <f:if condition="{settings.enableLightbox}">
+                            <f:then>
+                                <ws:column xs="6" sm="6" md="3" lg="3">
+                                    <figure class="image">
+                                        <a rel="{settings.lightbox}" class="{settings.lightbox}" data-fancybox="lightbox[{contentObjectData.pid}]" title="{object.properties.title}"
+                                           href="{f:uri.image(image:object,maxWidth:'{settings.image.lightboxWidth}')}">
+
+                                            <ws:picture image="{object}" class="img-fluid img-thumbnail mb-2" />
+
+                                        </a>
+                                        <f:if condition="{object.properties.description} || {object.properties.copyright}">
+                                            <figcaption class="image-caption">
+                                                <f:if condition="{settings.enableDescription}">
+                                                    {object.properties.description}
+                                                </f:if>
+                                                <f:if condition="{object.properties.copyright}"><span class="copyright">&copy; {object.properties.copyright}</span></f:if>
+                                            </figcaption>
+                                        </f:if>
+                                    </figure>
+                                </ws:column>
+                            </f:then>
+                            <f:else>
+                                <ws:column xs="6" sm="6" md="3" lg="3">
+
+                                    <figure class="image">
+                                        <ws:picture image="{object}" class="img-fluid img-thumbnail mb-2" />
+
+                                        <f:if condition="{object.properties.description} || {object.properties.copyright}">
+                                            <figcaption class="image-caption">
+                                                <f:if condition="{settings.enableDescription}">
+                                                    {object.properties.description}
+                                                </f:if>
+                                                <f:if condition="{object.properties.copyright}"><span class="copyright">&copy; {object.properties.copyright}</span></f:if>
+                                            </figcaption>
+                                        </f:if>
+
+                                    </figure>
+                                </ws:column>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </div>
+
+
+        </f:if>
+    </f:section>
+</html>

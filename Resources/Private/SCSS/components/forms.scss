@@ -1,0 +1,8 @@
+@import "init";
+@import "../bootstrap/forms";
+@import "../bootstrap/pagination";
+
+
+.de .custom-file-label::after {
+  content: "Auswählen";
+}

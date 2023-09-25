@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers"
+     xmlns:ws="http://typo3.org/ns/WapplerSystems/WsT3bootstrap/ViewHelpers"
+     xmlns:wsscss="http://typo3.org/ns/WapplerSystems/WsScss/ViewHelpers"
+     data-namespace-typo3-fluid="true">
+
+
+    <f:section name="Content">
+
+        <section class="hero hero--size-{hero.size} {f:if(condition:'{hero.media -> f:count()} > 0',then:'bg-img')}{f:if(condition:hero.useJumbotron,then:' hero--padding')}{f:if(condition:hero.useBigImage,then:' hero--size-big')}{f:if(condition:hero.useDarkImage,then:' hero--filter-dark')} high-ct">
+
+            <div class="hero-bg high-ct">
+
+                <f:if condition="{hero.media -> f:count()} == 1">
+
+                    <f:render section="MediaElement" arguments="{element:hero.media.0,selector:'.hero .hero-bg',containerless:containerless}" />
+
+                </f:if>
+
+
+                <f:if condition="{hero.media -> f:count()} > 1">
+
+                    <wsscss:asset.scss identifier="carousel" href="EXT:tft/Resources/Private/SCSS/components/carousel.scss" />
+
+                    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <f:for each="{hero.media}" iteration="iterator" as="item">
+
+                                <div class="carousel-item slide-{iterator.index}{f:if(condition: '{iterator.index} == 0',then:' active')}">
+                                    <f:link.typolink parameter="{item.link}">
+
+                                        <f:render section="MediaElement" arguments="{element:item,selector:'.hero .carousel .carousel-inner .slide-{iterator.index}',containerless:containerless}" />
+
+                                        <f:if condition="{item.title} || {item.description}">
+                                            <div class="carousel-caption">
+                                                <span class="title">{item.title}</span>
+                                                <span class="description">{item.description}</span>
+                                            </div>
+                                        </f:if>
+                                    </f:link.typolink>
+                                </div>
+                            </f:for>
+                        </div>
+                    </div>
+                </f:if>
+
+            </div>
+            <div class="hero-content {f:if(condition:hero.useContainer,then:'container')}">
+                {v:content.render(column:5)}
+            </div>
+        </section>
+
+    </f:section>
+
+
+    <f:section name="MediaElement">
+
+        <f:if condition="{element.type} == 2">
+            <ws:backgroundImage containerless="{containerless}" useBootstrapCropVariants="true" selector="{selector}" image="{element}" preload="true" />
+        </f:if>
+        <f:if condition="{element.type} == 4">
+
+            <figure class="video">
+                <f:media class="" file="{element}" alt="{element.alternative}" title="{element.title}" additionalConfig="{controls:'0', poster: '{hero.videoPoster.publicUr}'}" />
+                <f:if condition="{element.description}">
+                    <figcaption class="video-caption">
+                        {element.description}
+                    </figcaption>
+                </f:if>
+            </figure>
+
+        </f:if>
+
+    </f:section>
+
+
+    <f:section name="Hero">
+
+        <f:if condition="{hero.media -> f:count()} > 0 || {v:content.get(column:5) -> f:count()} > 0">
+            <f:if condition="{settings.layout} == 'boxed'">
+                <f:then>
+                    <div class="container">
+                        <f:render section="Content" arguments="{_all}"/>
+                    </div>
+                </f:then>
+                <f:else>
+                    <v:variable.set name="containerless" value="true" />
+                    <f:render section="Content" arguments="{_all}"/>
+                </f:else>
+            </f:if>
+        </f:if>
+
+    </f:section>
+
+
+</html>

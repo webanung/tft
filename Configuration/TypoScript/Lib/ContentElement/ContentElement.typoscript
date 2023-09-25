@@ -1,0 +1,3 @@
+lib.contentElement.settings.media.popup.linkParams.ATagParams.dataWrap = class="{$styles.content.textmedia.linkWrap.lightboxCssClass}" data-fancybox="{$styles.content.textmedia.linkWrap.lightboxRelAttribute}"
+
+lib.contentElement.settings.template < plugin.tx_tft.settings

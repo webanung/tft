@@ -1,0 +1,152 @@
+lib.callToAction {
+
+  activated = {$callToAction.activated}
+  email {
+    pageId = {$callToAction.email.pageId}
+    iconClass = t3b-icon-envelope
+    order = {$callToAction.email.order}
+    modal = {$callToAction.email.modal}
+    label = {$callToAction.email.label}
+  }
+
+  custom {
+    1 {
+      pageId = {$callToAction.custom.1.pageId}
+      label = {$callToAction.custom.1.label}
+      order = {$callToAction.custom.1.order}
+      iconClass = {$callToAction.custom.1.class}
+    }
+
+    2 {
+      pageId = {$callToAction.custom.2.pageId}
+      label = {$callToAction.custom.2.label}
+      order = {$callToAction.custom.2.order}
+      iconClass = {$callToAction.custom.2.class}
+    }
+  }
+
+  items {
+    facebook {
+      link = {$callToAction.default.facebook.link}
+      title = Facebook
+      iconClass = t3b-icon-facebook-f
+      btnClass = btn-facebook
+      order = {$callToAction.default.facebook.order}
+      label = {$callToAction.default.facebook.label}
+    }
+
+    youtube {
+      link = {$callToAction.default.youtube.link}
+      title = Youtube
+      iconClass = t3b-icon-youtube
+      btnClass = btn-youtube
+      order = {$callToAction.default.youtube.order}
+      label = {$callToAction.default.youtube.label}
+    }
+
+    instagram {
+      link = {$callToAction.default.instagram.link}
+      title = Instagram
+      iconClass = t3b-icon-instagram
+      btnClass = btn-instagram
+      order = {$callToAction.default.instagram.order}
+      label = {$callToAction.default.instagram.label}
+    }
+
+    pinterest {
+      link = {$callToAction.default.pinterest.link}
+      title = Pinterest
+      iconClass = t3b-icon-pinterest
+      btnClass = btn-pinterest
+      order = {$callToAction.default.pinterest.order}
+      label = {$callToAction.default.pinterest.label}
+    }
+
+    xing {
+      link = {$callToAction.default.xing.link}
+      title = Xing
+      iconClass = t3b-icon-xing
+      btnClass = btn-xing
+      order = {$callToAction.default.xing.order}
+      label = {$callToAction.default.xing.label}
+    }
+
+    linkedin {
+      link = {$callToAction.default.linkedin.link}
+      title = LinkedIn
+      iconClass = t3b-icon-linkedin
+      btnClass = btn-linkedin
+      order = {$callToAction.default.linkedin.order}
+      label = {$callToAction.default.linkedin.label}
+    }
+
+    git {
+      link = {$callToAction.default.git.link}
+      title = Github
+      iconClass = t3b-icon-github-alt
+      btnClass = btn-git
+      order = {$callToAction.default.git.order}
+      label = {$callToAction.default.git.label}
+    }
+  }
+}
+
+[siteLanguage("twoLetterIsoCode") == "de" && "{$callToAction.language.de.facebook.link}" != ""]
+  lib.callToAction.items.facebook.link = {$callToAction.language.de.facebook.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "de" && "{$callToAction.language.de.youtube.link}" != ""]
+  lib.callToAction.items.youtube.link = {$callToAction.language.de.youtube.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "de" && "{$callToAction.language.de.instagram.link}" != ""]
+  lib.callToAction.items.instagram.link = {$callToAction.language.de.instagram.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "de" && "{$callToAction.language.de.pinterest.link}" != ""]
+  lib.callToAction.items.pinterest.link = {$callToAction.language.de.pinterest.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "de" && "{$callToAction.language.de.xing.link}" != ""]
+  lib.callToAction.items.xing.link = {$callToAction.language.de.xing.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "de" && "{$callToAction.language.de.linkedin.link}" != ""]
+  lib.callToAction.items.linkedin.link = {$callToAction.language.de.linkedin.link}
+[end]
+
+
+[siteLanguage("twoLetterIsoCode") == "fr" && "{$callToAction.language.fr.facebook.link}" != ""]
+  lib.callToAction.items.facebook.link = {$callToAction.language.fr.facebook.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "fr" && "{$callToAction.language.fr.youtube.link}" != ""]
+  lib.callToAction.items.youtube.link = {$callToAction.language.fr.youtube.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "fr" && "{$callToAction.language.fr.instagram.link}" != ""]
+  lib.callToAction.items.instagram.link = {$callToAction.language.fr.instagram.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "fr" && "{$callToAction.language.fr.pinterest.link}" != ""]
+  lib.callToAction.items.pinterest.link = {$callToAction.language.fr.pinterest.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "fr" && "{$callToAction.language.fr.xing.link}" != ""]
+  lib.callToAction.items.xing.link = {$callToAction.language.fr.xing.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "fr" && "{$callToAction.language.fr.linkedin.link}" != ""]
+  lib.callToAction.items.linkedin.link = {$callToAction.language.fr.linkedin.link}
+[end]
+
+
+[siteLanguage("twoLetterIsoCode") == "nl" && "{$callToAction.language.nl.facebook.link}" != ""]
+  lib.callToAction.items.facebook.link = {$callToAction.language.nl.facebook.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "nl" && "{$callToAction.language.nl.youtube.link}" != ""]
+  lib.callToAction.items.youtube.link = {$callToAction.language.nl.youtube.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "nl" && "{$callToAction.language.nl.instagram.link}" != ""]
+  lib.callToAction.items.instagram.link = {$callToAction.language.nl.instagram.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "nl" && "{$callToAction.language.nl.pinterest.link}" != ""]
+  lib.callToAction.items.pinterest.link = {$callToAction.language.nl.pinterest.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "nl" && "{$callToAction.language.nl.xing.link}" != ""]
+  lib.callToAction.items.xing.link = {$callToAction.language.nl.xing.link}
+[end]
+[siteLanguage("twoLetterIsoCode") == "nl" && "{$callToAction.language.nl.linkedin.link}" != ""]
+  lib.callToAction.items.linkedin.link = {$callToAction.language.nl.linkedin.link}
+[end]
+

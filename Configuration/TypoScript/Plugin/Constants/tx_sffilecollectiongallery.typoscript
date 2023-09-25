@@ -1,0 +1,12 @@
+plugin.tx_sffilecollectiongallery {
+
+  view {
+
+    templateRootPath = EXT:tft/Resources/Private/Extensions/SfFilecollectionGallery/Templates/
+
+    layoutRootPath = EXT:tft/Resources/Private/Extensions/SfFilecollectionGallery/Layouts/
+
+  }
+
+
+}

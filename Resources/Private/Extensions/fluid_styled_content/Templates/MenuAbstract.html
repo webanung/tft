@@ -1,0 +1,62 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ws="http://typo3.org/ns/WapplerSystems/WsT3bootstrap/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+    <f:switch expression="{data.layout}">
+        <f:case value="430">
+
+            <f:if condition="{menu}">
+
+                    <f:for each="{menu}" as="page">
+                        <div class="row mb-5">
+                            <ws:column md="4" lg="3">
+                                <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+                                    <f:if condition="{page.files.0}">
+                                        <ws:picture class="img-fluid" image="{page.files.0}" />
+                                    </f:if>
+                                </a>
+
+                            </ws:column>
+                            <ws:column md="8" lg="9">
+
+                                <h3><a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+                                <span>{page.title}</span>
+                                </a></h3>
+                                <f:if condition="{page.data.abstract}">
+                                    <f:format.html>{page.data.abstract}</f:format.html>
+                                </f:if>
+
+                                <a class="more" href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+                                    <f:translate key="LLL:EXT:tft/Resources/Private/Language/locallang.xlf:link.more" />
+                                </a>
+                            </ws:column>
+                        </div>
+                    </f:for>
+
+            </f:if>
+
+        </f:case>
+        <f:defaultCase>
+
+            <f:if condition="{menu}">
+                <ul>
+                    <f:for each="{menu}" as="page">
+                        <li>
+                            <a href="{page.link}"{f:if(condition: page.target, then: ' target="{page.target}"')} title="{page.title}">
+                            <span>{page.title}</span>
+                            </a>
+                            <f:if condition="{page.data.abstract}">
+                                <f:format.html>{page.data.abstract}</f:format.html>
+                            </f:if>
+                        </li>
+                    </f:for>
+                </ul>
+            </f:if>
+
+        </f:defaultCase>
+    </f:switch>
+
+
+
+</f:section>
+</html>

@@ -1,0 +1,7 @@
+plugin.tx_form {
+
+  settings.yamlConfigurations {
+    72 = EXT:tft/Configuration/Yaml/FormSetup.yaml
+  }
+
+}

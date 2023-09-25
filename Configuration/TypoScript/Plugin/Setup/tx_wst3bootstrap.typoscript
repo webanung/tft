@@ -1,0 +1,4 @@
+plugin.tx_wst3bootstrap.view.partialRootPaths.400 = EXT:tft/Resources/Private/Extensions/WsT3bootstrap/Partials/
+plugin.tx_wst3bootstrap.view.layoutRootPaths.400 = EXT:tft/Resources/Private/Extensions/WsT3bootstrap/Layouts/
+
+plugin.tx_wst3bootstrap.settings.ajaxMenu < lib.menu
